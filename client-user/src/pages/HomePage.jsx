@@ -1,10 +1,14 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import Login from '../components/Login';
 
 const HomePage = () => {
   return (
     <div className='bg-secondary'>
-      <Carousel fade>
+      <div className='card bg-light bg-opacity-75' style={{position: 'absolute', right: '3%', top: '10%', zIndex: '1'}}>
+        <Login/>
+      </div>
+      <Carousel fade style={{zIndex: '0'}}>
         <Carousel.Item>
           <img
             className="d-block w-100"

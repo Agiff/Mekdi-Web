@@ -28,7 +28,7 @@ const MenuPage = () => {
       <div className='d-flex flex-wrap justify-content-center align-items-center p-3'>
         {
           loading ? <Loading /> : items.map(item => {
-            return <ItemCard item={item}/>
+            return <ItemCard item={item} key={item.id}/>
           })
         }
       </div>
