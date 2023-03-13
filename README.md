@@ -19,7 +19,7 @@ Target:
 - [v] Mempelajari State menggunakan useState
 - [v] Mengirim Props baik berupa sebuah state atau function
 - [v] Event Handling (onClick, onChange, onSubmit)
-- [ ] Conditional Rendering di dalam React
+- [v] Conditional Rendering di dalam React
 - [v] Looping List of Data di dalam React
 - [v] Lifecycle component menggunakan useEffect
 - [v] Membuat server (json-server)

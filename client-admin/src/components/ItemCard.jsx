@@ -7,7 +7,7 @@ function ItemCard({ item }) {
   }
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className='m-3' style={{ width: '18rem' }}>
       <Card.Img variant="top" src={item.imgUrl} />
       <Card.Body>
         <Card.Title>{item.name}</Card.Title>
