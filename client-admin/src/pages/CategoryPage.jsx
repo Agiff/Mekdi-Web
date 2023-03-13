@@ -28,7 +28,7 @@ const CategoryPage = () => {
     <div>
       {
         loading ? <Loading /> : <>
-          <h1>Home</h1>
+          <h1>Category</h1>
           <Table striped bordered hover>
             <thead>
               <tr>
