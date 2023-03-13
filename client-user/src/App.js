@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import HomePage from './pages/HomePage';
+import MenuPage from './pages/MenuPage';
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <HomePage />
+      <MenuPage />
     </div>
   );
 }
