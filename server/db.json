@@ -1,0 +1,153 @@
+{
+  "users": [
+    { "id": 1, "username": "seirei", "email": "a@a.com", "password": "a", "role": "admin", "phoneNumber": "08481111114", "address": "somewhere" },
+    { "id": 2, "username": "agif", "email": "agif@mail.com", "password": "qwe", "role": "user", "phoneNumber": "08112212123", "address": "dokoka" },
+    { "id": 3, "username": "ded", "email": "ded@mail.com", "password": "qwe", "role": "user", "phoneNumber": "08112212123", "address": "graveyard" }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "description": "A classic pizza with tomato sauce, mozzarella cheese, and basil",
+      "price": 120000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2019/09/easy-margherita-pizza-horiz-a-2000.jpg",
+      "authorId": 2,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T15:40:17.000Z",
+      "updatedAt": "2023-03-13T15:40:17.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni Pizza",
+      "description": "A classic pizza with tomato sauce, mozzarella cheese, and pepperoni slices",
+      "price": 150000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2018/07/HOMEPAGE-Pepperoni-Pizza-LEAD-2-600x840.jpg",
+      "authorId": 3,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T15:45:03.000Z",
+      "updatedAt": "2023-03-13T15:45:03.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Veggie Pizza",
+      "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, and assorted vegetables",
+      "price": 130000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2021/06/VEGGIE-PIZZA-1-600x840.jpg",
+      "authorId": 2,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T15:50:12.000Z",
+      "updatedAt": "2023-03-13T15:50:12.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Hawaiian Pizza",
+      "description": "A pizza with tomato sauce, mozzarella cheese, ham, and pineapple",
+      "price": 140000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2019/08/hawaiian-pizza-horiz-a-2000.jpg",
+      "authorId": 1,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T16:00:00.000Z",
+      "updatedAt": "2023-03-13T16:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Meat Lovers Pizza",
+      "description": "A pizza with tomato sauce, mozzarella cheese, pepperoni, sausage, and bacon",
+      "price": 160000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2017/01/2017-02-10-Meat-Lover-Pizza-14-600x840.jpg",
+      "authorId": 3,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T16:10:00.000Z",
+      "updatedAt": "2023-03-13T16:10:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "BBQ Chicken Pizza",
+      "description": "A pizza with BBQ sauce, mozzarella cheese, chicken, red onion, and cilantro",
+      "price": 170000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2020/08/BBQ-Chicken-Pizza-LEAD-1-600x840.jpg",
+      "authorId": 2,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T16:20:00.000Z",
+      "updatedAt": "2023-03-13T16:20:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Mushroom Pizza",
+      "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, and assorted mushrooms",
+      "price": 130000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2021/04/mushroom-pizza-horiz-a-2000.jpg",
+      "authorId": 2,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T16:30:00.000Z",
+      "updatedAt": "2023-03-13T16:30:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "White Pizza",
+      "description": "A pizza with garlic-infused olive oil, mozzarella cheese, and assorted toppings",
+      "price": 150000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2013/06/white-pizza-horiz-a-2000.jpg",
+      "authorId": 1,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T16:40:00.000Z",
+      "updatedAt": "2023-03-13T16:40:00.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Veggie Supreme Pizza",
+      "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, bell peppers, onions, mushrooms, and olives",
+      "price": 150000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2019/09/Veggie-Supreme-Pizza-HORIZONTAL-LEAD.jpg",
+      "authorId": 3,
+      "categoryId": 1,
+      "createdAt": "2023-03-13T16:50:00.000Z",
+      "updatedAt": "2023-03-13T16:50:00.000Z"
+    },
+    {
+      "id": 11,
+      "name": "Coca-Cola",
+      "description": "A classic soda made with Coca-Cola's secret recipe",
+      "price": 50000,
+      "imgUrl": "https://www.coca-cola.com.sg/content/dam/tcccsg/common/hamburger/brands/coca-cola/coca-cola-hamburger.jpg",
+      "authorId": 2,
+      "categoryId": 2,
+      "createdAt": "2023-03-13T17:00:00.000Z",
+      "updatedAt": "2023-03-13T17:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "name": "Orange Juice",
+      "description": "A refreshing glass of orange juice made from fresh oranges",
+      "price": 75000,
+      "imgUrl": "https://www.simplyrecipes.com/thmb/6zPE01QOvP0SkCwib2A1AEZ0ivA=/2000x1333/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2009__05__fresh-orange-juice-horiz-a-2000-a02-ee05d3c3f2e745009df9f98ed8b857fa.jpg",
+      "authorId": 2,
+      "categoryId": 2,
+      "createdAt": "2023-03-13T17:05:00.000Z",
+      "updatedAt": "2023-03-13T17:05:00.000Z"
+    },
+    {
+      "id": 13,
+      "name": "Iced Tea",
+      "description": "A refreshing and sweetened iced tea made from tea leaves",
+      "price": 60000,
+      "imgUrl": "https://www.simplyrecipes.com/wp-content/uploads/2020/06/Iced-Tea-HORIZONTAL-LEAD-1.jpg",
+      "authorId": 3,
+      "categoryId": 2,
+      "createdAt": "2023-03-13T17:10:00.000Z",
+      "updatedAt": "2023-03-13T17:10:00.000Z"
+    }    
+  ],
+  "categories": [
+    { "id": 1, "name": "food" },
+    { "id": 2, "name": "beverage" }
+  ],
+  "ingredients": [
+    { "id": 1, "itemId": 1, "name": "flour" },
+    { "id": 2, "itemId": 1, "name": "meat" },
+    { "id": 3, "itemId": 11, "name": "water" },
+    { "id": 4, "itemId": 11, "name": "sugar" },
+    { "id": 5, "itemId": 2, "name": "flour" },
+    { "id": 6, "itemId": 2, "name": "sausage" }
+  ]
+}
