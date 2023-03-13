@@ -14,19 +14,19 @@ Struktur Folder:
 
 Target:
 
-- [ ] Lecture - React Intro
-- [ ] React: Class Component vs Function Component
-- [ ] Mempelajari State menggunakan useState
-- [ ] Mengirim Props baik berupa sebuah state atau function
-- [ ] Event Handling (onClick, onChange, onSubmit)
+- [v] Lecture - React Intro
+- [v] React: Class Component vs Function Component
+- [v] Mempelajari State menggunakan useState
+- [v] Mengirim Props baik berupa sebuah state atau function
+- [v] Event Handling (onClick, onChange, onSubmit)
 - [ ] Conditional Rendering di dalam React
-- [ ] Looping List of Data di dalam React
-- [ ] Lifecycle component menggunakan useEffect
-- [ ] Membuat server (json-server)
+- [v] Looping List of Data di dalam React
+- [v] Lifecycle component menggunakan useEffect
+- [v] Membuat server (json-server)
 - [ ] Membuat react app untuk client-user (Styling)
-- [ ] Membuat react app untuk client-admin (CRUD)
-- [ ] Menentukan Thema Aplikasi
-- [ ] Menentukan Design dan pemilihan CSS Framework
+- [v] Membuat react app untuk client-admin (CRUD)
+- [v] Menentukan Thema Aplikasi
+- [v] Menentukan Design dan pemilihan CSS Framework
 
 **Report:**
 
