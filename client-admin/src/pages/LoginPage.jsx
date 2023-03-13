@@ -26,7 +26,7 @@ const LoginPage = () => {
     <>
       <h1>Login</h1>
       <Form onSubmit={submitLogin}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formLoginEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name='email' placeholder="Enter email" onChange={changeLoginFormHandler}/>
           <Form.Text className="text-muted">
@@ -34,12 +34,12 @@ const LoginPage = () => {
           </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formLoginPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name='password' placeholder="Password" onChange={changeLoginFormHandler}/>
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Sign In
         </Button>
       </Form>
     </>

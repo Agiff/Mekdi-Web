@@ -1,8 +1,32 @@
 {
   "users": [
-    { "id": 1, "username": "seirei", "email": "a@a.com", "password": "a", "role": "admin", "phoneNumber": "08481111114", "address": "somewhere" },
-    { "id": 2, "username": "agif", "email": "agif@mail.com", "password": "qwe", "role": "user", "phoneNumber": "08112212123", "address": "dokoka" },
-    { "id": 3, "username": "ded", "email": "ded@mail.com", "password": "qwe", "role": "user", "phoneNumber": "08112212123", "address": "graveyard" }
+    {
+      "id": 1,
+      "username": "seirei",
+      "email": "a@a.com",
+      "password": "a",
+      "role": "admin",
+      "phoneNumber": "08481111114",
+      "address": "somewhere"
+    },
+    {
+      "id": 2,
+      "username": "agif",
+      "email": "agif@mail.com",
+      "password": "qwe",
+      "role": "user",
+      "phoneNumber": "08112212123",
+      "address": "dokoka"
+    },
+    {
+      "id": 3,
+      "username": "ded",
+      "email": "ded@mail.com",
+      "password": "qwe",
+      "role": "user",
+      "phoneNumber": "08112212123",
+      "address": "graveyard"
+    }
   ],
   "items": [
     {
@@ -136,7 +160,7 @@
       "categoryId": 2,
       "createdAt": "2023-03-13T17:10:00.000Z",
       "updatedAt": "2023-03-13T17:10:00.000Z"
-    }    
+    }
   ],
   "categories": [
     {
@@ -153,11 +177,35 @@
     }
   ],
   "ingredients": [
-    { "id": 1, "itemId": 1, "name": "flour" },
-    { "id": 2, "itemId": 1, "name": "meat" },
-    { "id": 3, "itemId": 11, "name": "water" },
-    { "id": 4, "itemId": 11, "name": "sugar" },
-    { "id": 5, "itemId": 2, "name": "flour" },
-    { "id": 6, "itemId": 2, "name": "sausage" }
+    {
+      "id": 1,
+      "itemId": 1,
+      "name": "flour"
+    },
+    {
+      "id": 2,
+      "itemId": 1,
+      "name": "meat"
+    },
+    {
+      "id": 3,
+      "itemId": 11,
+      "name": "water"
+    },
+    {
+      "id": 4,
+      "itemId": 11,
+      "name": "sugar"
+    },
+    {
+      "id": 5,
+      "itemId": 2,
+      "name": "flour"
+    },
+    {
+      "id": 6,
+      "itemId": 2,
+      "name": "sausage"
+    }
   ]
 }

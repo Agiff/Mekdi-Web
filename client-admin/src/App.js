@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
+import RegisterPage from './pages/RegisterPage';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <LoginPage />
       <HomePage />
       <CategoryPage />
+      <RegisterPage />
     </div>
   );
 }
