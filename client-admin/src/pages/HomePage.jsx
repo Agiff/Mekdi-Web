@@ -22,6 +22,11 @@ const HomePage = () => {
     getItems();
   }, [])
   
+  const getPrice = (price) => new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+  }).format(price);
 
   return (
     <div>
@@ -48,7 +53,7 @@ const HomePage = () => {
                     <td>{index+1}</td>
                     <td>{item.name}</td>
                     <td>{item.description}</td>
-                    <td>Rp. {item.price}</td>
+                    <td>{getPrice(item.price)}</td>
                     <td><img src={item.imgUrl} alt={item.name} width="100" /></td>
                     <td>{item.authorId}</td>
                     <td>{item.categoryId}</td>

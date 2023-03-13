@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import CategoryPage from './pages/CategoryPage';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       </header>
       <LoginPage />
       <HomePage />
+      <CategoryPage />
     </div>
   );
 }

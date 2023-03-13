@@ -139,8 +139,18 @@
     }    
   ],
   "categories": [
-    { "id": 1, "name": "food" },
-    { "id": 2, "name": "beverage" }
+    {
+      "id": 1,
+      "name": "food",
+      "createdAt": "2023-03-13T17:05:00.000Z",
+      "updatedAt": "2023-03-13T17:05:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "beverage",
+      "createdAt": "2023-03-13T17:05:00.000Z",
+      "updatedAt": "2023-03-13T17:05:00.000Z"
+    }
   ],
   "ingredients": [
     { "id": 1, "itemId": 1, "name": "flour" },
