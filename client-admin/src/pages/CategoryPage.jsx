@@ -23,6 +23,12 @@ const CategoryPage = () => {
     getCategories();
   }, [])
   
+  const deleteHandler = async (id) => {
+    await fetch('http://localhost:3000/categories/' + id, {
+      method: 'DELETE'
+    });
+  }
+
   return (
     <div className='container'>
       {
@@ -47,7 +53,8 @@ const CategoryPage = () => {
                     <td>{getDate(category.createdAt)}</td>
                     <td>{getDate(category.updatedAt)}</td>
                     <td>
-                      <Button variant="primary" className='btn btn-danger'>Delete</Button>
+                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => deleteHandler(category.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
                 })

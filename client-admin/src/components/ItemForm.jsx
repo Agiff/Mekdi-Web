@@ -51,29 +51,29 @@ const ItemForm = (props) => {
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
-                Add Item
+                { props.selectedItem ? 'Edit Item' : 'Add Item' }
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form onSubmit={submitAddItem} className='px-2'>
                 <Form.Group className="mb-3" controlId="formItemName">
                   <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" name='name' onChange={changeItemFormHandler}/>
+                  <Form.Control type="text" name='name' value={props.selectedItem ? props.selectedItem?.name : ''} onChange={changeItemFormHandler}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formItemDescription">
                   <Form.Label>Description</Form.Label>
-                  <Form.Control type="text" name='description' onChange={changeItemFormHandler} />
+                  <Form.Control as="textarea" rows={3} name='description' value={props.selectedItem ? props.selectedItem?.description : ''} onChange={changeItemFormHandler} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formItemPrice">
                   <Form.Label>Price</Form.Label>
-                  <Form.Control type="number" name='price' onChange={changeItemFormHandler} />
+                  <Form.Control type="number" name='price' value={props.selectedItem ? props.selectedItem?.price : ''} onChange={changeItemFormHandler} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formItemImage">
                   <Form.Label>Image</Form.Label>
-                  <Form.Control type="text" name='imgUrl' onChange={changeItemFormHandler} />
+                  <Form.Control type="text" name='imgUrl' value={props.selectedItem ? props.selectedItem?.imgUrl : ''} onChange={changeItemFormHandler} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formItemCategory">
@@ -81,13 +81,13 @@ const ItemForm = (props) => {
                   <Form.Select aria-label="Default select example" name='categoryId' onChange={changeItemFormHandler}>
                     <option>-- Select --</option>
                     {
-                      categories.map(category => <option value={category.id} key={category.id}>{category.name}</option>)
+                      categories.map(category => <option selected={category.id === props.selectedItem?.categoryId} value={category.id} key={category.id}>{category.name}</option>)
                     }
                   </Form.Select>
                 </Form.Group>
                 
                 <Button variant="primary" type="submit" className='px-4'>
-                  Add
+                  { props.selectedItem ? 'Edit' : 'Add' }
                 </Button>
               </Form>
             </Modal.Body>
