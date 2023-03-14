@@ -81,7 +81,7 @@ const ItemForm = (props) => {
                   <Form.Select aria-label="Default select example" name='categoryId' onChange={changeItemFormHandler}>
                     <option>-- Select --</option>
                     {
-                      categories.map(category => <option value={category.id}>{category.name}</option>)
+                      categories.map(category => <option value={category.id} key={category.id}>{category.name}</option>)
                     }
                   </Form.Select>
                 </Form.Group>

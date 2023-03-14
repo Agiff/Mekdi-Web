@@ -10,6 +10,12 @@ const HomePage = () => {
   const [items, loading, error] = useFetch('items');
   const [itemFormShow, setItemFormShow] = React.useState(false);
 
+  const deleteHandler = async (id) => {
+    await fetch('http://localhost:3000/items/' + id, {
+      method: 'DELETE'
+    });
+  }
+
   if (error) return <div>{error}</div>
 
   return (
@@ -52,7 +58,7 @@ const HomePage = () => {
                     <td>{item.categoryId}</td>
                     <td>
                       <Button variant="primary" className='btn btn-primary'>Edit</Button>
-                      <Button variant="primary" className='btn btn-danger'>Delete</Button>
+                      <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
                 })

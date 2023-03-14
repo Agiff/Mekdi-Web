@@ -34,14 +34,6 @@
       "phoneNumber": "08888253500",
       "address": "Jl. Mars Barat no. 15",
       "id": 4
-    },
-    {
-      "username": "agif",
-      "email": "agif@agif.com",
-      "password": "qwerty",
-      "phoneNumber": "08888253500",
-      "address": "Jl. Mars Barat no. 15",
-      "id": 5
     }
   ],
   "items": [
@@ -176,24 +168,6 @@
       "categoryId": 2,
       "createdAt": "2023-03-13T17:10:00.000Z",
       "updatedAt": "2023-03-13T17:10:00.000Z"
-    },
-    {
-      "name": "Pineapple Pizza",
-      "description": "Cursed pizza by italian",
-      "price": "1000000",
-      "imgUrl": "http://duar.com",
-      "authorId": 1,
-      "categoryId": "1",
-      "id": 13
-    },
-    {
-      "name": "Chocolate Pizza",
-      "description": "Martabak",
-      "price": "50000",
-      "imgUrl": "http://choco.com",
-      "authorId": 1,
-      "categoryId": "1",
-      "id": 14
     }
   ],
   "categories": [
