@@ -1,38 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import useFetch from '../hooks/useFetch';
+import { getPrice } from '../helpers';
 
 const HomePage = () => {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    async function getItems() {
-      try {
-        let dataItems = await fetch('http://localhost:3000/items');
-        if (!dataItems) throw await dataItems.text();
-        dataItems = await dataItems.json();
-        setItems(dataItems);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getItems();
-  }, [])
-  
-  const getPrice = (price) => new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0,
-  }).format(price);
+  const [items, loading, error] = useFetch('items');
 
   return (
     <div>
       {
         loading ? <Loading /> : <>
-          <h1>Home</h1>
+          <div className='d-flex justify-content-between'>
+            <h1>Home</h1>
+            <Button variant="primary" className='btn btn-primary px-4'>Add</Button>
+          </div>
+          <hr />
           <Table striped bordered hover>
             <thead>
               <tr>

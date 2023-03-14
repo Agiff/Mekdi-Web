@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import { getDate } from '../helpers';
 
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
@@ -21,8 +22,6 @@ const CategoryPage = () => {
     }
     getCategories();
   }, [])
-
-  const getDate = (date) => date.split('T')[0];
   
   return (
     <div>
