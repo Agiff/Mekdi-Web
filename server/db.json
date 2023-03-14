@@ -26,6 +26,14 @@
       "role": "user",
       "phoneNumber": "08112212123",
       "address": "graveyard"
+    },
+    {
+      "username": "agif",
+      "email": "agif@agif.com",
+      "password": "123123123",
+      "phoneNumber": "08888253500",
+      "address": "Jl. Mars Barat no. 15",
+      "id": 4
     }
   ],
   "items": [

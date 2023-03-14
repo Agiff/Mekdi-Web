@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: ''
@@ -19,30 +21,30 @@ const LoginPage = () => {
 
   const submitLogin = (e) => {
     e.preventDefault();
-    console.log(loginForm);
+    localStorage.access_token = loginForm;
+    navigate('/');
   }
 
   return (
-    <>
-      <h1>Login</h1>
-      <Form onSubmit={submitLogin}>
-        <Form.Group className="mb-3" controlId="formLoginEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" name='email' placeholder="Enter email" onChange={changeLoginFormHandler}/>
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+    <div className='container vh-100 d-flex justify-content-center align-items-center'>
+      <div className='card w-50 p-4'>
+        <h1 className='mb-5'>Login</h1>
+        <Form onSubmit={submitLogin}>
+          <Form.Group className="mb-3" controlId="formLoginEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" name='email' placeholder="Enter email" onChange={changeLoginFormHandler}/>
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formLoginPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" name='password' placeholder="Password" onChange={changeLoginFormHandler}/>
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Sign In
-        </Button>
-      </Form>
-    </>
+          <Form.Group className="mb-3" controlId="formLoginPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" name='password' placeholder="Password" onChange={changeLoginFormHandler}/>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Sign In
+          </Button>
+        </Form>
+      </div>
+    </div>
   );
 }
 

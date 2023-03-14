@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import HomePage from './pages/HomePage';
-import MenuPage from './pages/MenuPage';
 import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <MenuPage />
+      <RouterProvider router={router} />
     </div>
   );
 }

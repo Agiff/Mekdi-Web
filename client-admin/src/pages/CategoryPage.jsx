@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import { getDate } from '../helpers';
+import CategoryForm from '../components/CategoryForm';
 
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [categoryFormShow, setCategoryFormShow] = React.useState(false);
   
   useEffect(() => {
     async function getCategories() {
@@ -21,14 +24,26 @@ const CategoryPage = () => {
     }
     getCategories();
   }, [])
-
-  const getDate = (date) => date.split('T')[0];
   
+  const deleteHandler = async (id) => {
+    await fetch('http://localhost:3000/categories/' + id, {
+      method: 'DELETE'
+    });
+  }
+
   return (
-    <div>
+    <div className='container'>
       {
         loading ? <Loading /> : <>
-          <h1>Category</h1>
+          <div className='d-flex justify-content-between'>
+            <h1>Category</h1>
+            <Button variant="primary" className='btn btn-primary px-4'
+            onClick={() => setCategoryFormShow(true)}>Add</Button>
+          </div>
+          <CategoryForm
+            show={categoryFormShow}
+            onHide={() => setCategoryFormShow(false)}
+          />
           <Table striped bordered hover>
             <thead>
               <tr>
@@ -48,7 +63,8 @@ const CategoryPage = () => {
                     <td>{getDate(category.createdAt)}</td>
                     <td>{getDate(category.updatedAt)}</td>
                     <td>
-                      <Button variant="primary" className='btn btn-danger'>Delete</Button>
+                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => deleteHandler(category.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
                 })

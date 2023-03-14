@@ -23,7 +23,7 @@ Target:
 - [v] Looping List of Data di dalam React
 - [v] Lifecycle component menggunakan useEffect
 - [v] Membuat server (json-server)
-- [ ] Membuat react app untuk client-user (Styling)
+- [v] Membuat react app untuk client-user (Styling)
 - [v] Membuat react app untuk client-admin (CRUD)
 - [v] Menentukan Thema Aplikasi
 - [v] Menentukan Design dan pemilihan CSS Framework
@@ -39,9 +39,9 @@ Target:
 
 Target:
 
-- [ ] Lecture - Custom Hooks
-- [ ] Rules of Hooks
-- [ ] Lecture - React-Router
+- [v] Lecture - Custom Hooks
+- [v] Rules of Hooks
+- [v] Lecture - React-Router
 - [ ] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
 - [ ] Membuat privateRoute untuk admin
