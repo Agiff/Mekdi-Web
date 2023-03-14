@@ -1,20 +1,17 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
+import { getPrice } from '../helpers';
 
 function ItemCard({ item }) {
+  const navigate = useNavigate();
   const pesanButton = () => {
     console.log('duar');
   }
   
-  const getPrice = (price) => new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0,
-  }).format(price);
-
   return (
     <Card className='m-3' style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={item.imgUrl} />
+      <Card.Img style={{cursor: 'pointer'}} variant="top" src={item.imgUrl} onClick={() => navigate(`/detail/${item.id}`)}/>
       <Card.Body>
         <Card.Title>{item.name}</Card.Title>
         <div className='d-flex justify-content-evenly align-items-center'>
