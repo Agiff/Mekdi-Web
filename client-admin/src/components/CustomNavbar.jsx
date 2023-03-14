@@ -22,6 +22,7 @@ const CustomNavbar = () => {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/categories">Category</Nav.Link>
+              <Nav.Link href="/register">Register Admin</Nav.Link>
             </Nav>
             <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
           </Navbar.Collapse>

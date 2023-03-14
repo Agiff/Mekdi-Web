@@ -21,20 +21,16 @@ const router = createBrowserRouter([
       {
         path: "categories",
         element: <CategoryPage />
-      }
+      },
+      {
+        path: "register",
+        element: <RegisterPage />
+      },
     ]
   },
   {
     path: "login",
     element: <LoginPage />,
-    loader: () => {
-      if (localStorage.access_token) throw redirect('/');
-      return null;
-    },
-  },
-  {
-    path: "register",
-    element: <RegisterPage />,
     loader: () => {
       if (localStorage.access_token) throw redirect('/');
       return null;
