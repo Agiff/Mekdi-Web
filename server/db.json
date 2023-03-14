@@ -185,6 +185,15 @@
       "authorId": 1,
       "categoryId": "1",
       "id": 13
+    },
+    {
+      "name": "Chocolate Pizza",
+      "description": "Martabak",
+      "price": "50000",
+      "imgUrl": "http://choco.com",
+      "authorId": 1,
+      "categoryId": "1",
+      "id": 14
     }
   ],
   "categories": [

@@ -3,7 +3,6 @@ import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import CategoryPage from "../pages/CategoryPage";
-import ItemFormPage from "../pages/ItemFormPage";
 import Layout from "../components/Layout";
 
 const router = createBrowserRouter([
@@ -22,11 +21,7 @@ const router = createBrowserRouter([
       {
         path: "categories",
         element: <CategoryPage />
-      },
-      {
-        path: "add",
-        element: <ItemFormPage />
-      },
+      }
     ]
   },
   {

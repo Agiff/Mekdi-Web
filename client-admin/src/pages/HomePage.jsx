@@ -4,9 +4,11 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import useFetch from '../hooks/useFetch';
 import { getPrice } from '../helpers';
+import ItemForm from '../components/ItemForm';
 
 const HomePage = () => {
   const [items, loading, error] = useFetch('items');
+  const [itemFormShow, setItemFormShow] = React.useState(false);
 
   if (error) return <div>{error}</div>
 
@@ -16,8 +18,13 @@ const HomePage = () => {
         loading ? <Loading /> : <>
           <div className='d-flex justify-content-between'>
             <h1>Home</h1>
-            <Button variant="primary" className='btn btn-primary px-4'>Add</Button>
+            <Button variant="primary" className='btn btn-primary px-4'
+            onClick={() => setItemFormShow(true)}>Add</Button>
           </div>
+          <ItemForm
+            show={itemFormShow}
+            onHide={() => setItemFormShow(false)}
+          />
           <hr />
           <Table striped bordered hover>
             <thead>
