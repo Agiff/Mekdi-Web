@@ -34,6 +34,14 @@
       "phoneNumber": "08888253500",
       "address": "Jl. Mars Barat no. 15",
       "id": 4
+    },
+    {
+      "username": "agif",
+      "email": "agif@agif.com",
+      "password": "qwerty",
+      "phoneNumber": "08888253500",
+      "address": "Jl. Mars Barat no. 15",
+      "id": 5
     }
   ],
   "items": [

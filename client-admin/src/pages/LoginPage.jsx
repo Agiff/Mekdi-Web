@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: ''
@@ -19,19 +21,17 @@ const LoginPage = () => {
 
   const submitLogin = (e) => {
     e.preventDefault();
-    console.log(loginForm);
+    localStorage.access_token = loginForm;
+    navigate('/');
   }
 
   return (
-    <>
+    <div className='container'>
       <h1>Login</h1>
       <Form onSubmit={submitLogin}>
         <Form.Group className="mb-3" controlId="formLoginEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name='email' placeholder="Enter email" onChange={changeLoginFormHandler}/>
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formLoginPassword">
@@ -42,7 +42,7 @@ const LoginPage = () => {
           Sign In
         </Button>
       </Form>
-    </>
+    </div>
   );
 }
 

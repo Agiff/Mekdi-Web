@@ -11,7 +11,7 @@ const HomePage = () => {
   if (error) return <div>{error}</div>
 
   return (
-    <div>
+    <div className='container'>
       {
         loading ? <Loading /> : <>
           <div className='d-flex justify-content-between'>

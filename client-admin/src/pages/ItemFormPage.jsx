@@ -38,7 +38,7 @@ const ItemFormPage = () => {
   if (error) return <div>{error}</div>
 
   return (
-    <div>
+    <div className='container'>
       {
         loading ? <Loading /> : <>
           <h1>Add Item</h1>

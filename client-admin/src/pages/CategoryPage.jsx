@@ -24,7 +24,7 @@ const CategoryPage = () => {
   }, [])
   
   return (
-    <div>
+    <div className='container'>
       {
         loading ? <Loading /> : <>
           <h1>Category</h1>

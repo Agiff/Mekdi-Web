@@ -11,7 +11,7 @@ const useFetch = (entity) => {
     async function getItems() {
       try {
         let response = await fetch(baseUrl + entity);
-        if (!response) throw await response.text();
+        if (!response.ok) throw await response.text();
         response = await response.json();
         setData(response);
         setLoading(false);

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const [registerForm, setRegisterForm] = useState({
     username: '',
     email: '',
@@ -29,10 +31,11 @@ const RegisterPage = () => {
       },
       body: JSON.stringify(registerForm)
     });
+    navigate('/login');
   }
 
   return (
-    <>
+    <div className='container'>
       <h1>Register</h1>
       <Form onSubmit={submitRegister}>
         <Form.Group className="mb-3" controlId="formRegisterUsername">
@@ -63,7 +66,7 @@ const RegisterPage = () => {
           Sign Up
         </Button>
       </Form>
-    </>
+    </div>
   );
 }
 
