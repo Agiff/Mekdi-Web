@@ -9,22 +9,11 @@ import ItemForm from '../components/ItemForm';
 const HomePage = () => {
   const [items, loading, error] = useFetch('items');
   const [itemFormShow, setItemFormShow] = React.useState(false);
-  const [selectedItem, setSelectedItem] = React.useState(null);
 
   const deleteHandler = async (id) => {
     await fetch('http://localhost:3000/items/' + id, {
       method: 'DELETE'
     });
-  }
-
-  const addItemHandler = () => {
-    setItemFormShow(true);
-    setSelectedItem(null);
-  }
-
-  const editItemHandler = (item) => {
-    setItemFormShow(true);
-    setSelectedItem(item);
   }
 
   if (error) return <div>{error}</div>
@@ -36,12 +25,11 @@ const HomePage = () => {
           <div className='d-flex justify-content-between'>
             <h1>Home</h1>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => addItemHandler()}>Add</Button>
+            onClick={() => setItemFormShow(true)}>Add</Button>
           </div>
           <ItemForm
             show={itemFormShow}
             onHide={() => setItemFormShow(false)}
-            selectedItem={selectedItem}
           />
           <hr />
           <Table striped bordered hover>
@@ -69,7 +57,7 @@ const HomePage = () => {
                     <td>{item.authorId}</td>
                     <td>{item.categoryId}</td>
                     <td>
-                      <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>

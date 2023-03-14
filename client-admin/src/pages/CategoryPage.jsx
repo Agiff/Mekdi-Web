@@ -3,10 +3,12 @@ import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
+import CategoryForm from '../components/CategoryForm';
 
 const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [categoryFormShow, setCategoryFormShow] = React.useState(false);
   
   useEffect(() => {
     async function getCategories() {
@@ -33,7 +35,15 @@ const CategoryPage = () => {
     <div className='container'>
       {
         loading ? <Loading /> : <>
-          <h1>Category</h1>
+          <div className='d-flex justify-content-between'>
+            <h1>Category</h1>
+            <Button variant="primary" className='btn btn-primary px-4'
+            onClick={() => setCategoryFormShow(true)}>Add</Button>
+          </div>
+          <CategoryForm
+            show={categoryFormShow}
+            onHide={() => setCategoryFormShow(false)}
+          />
           <Table striped bordered hover>
             <thead>
               <tr>
