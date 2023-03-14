@@ -3,6 +3,7 @@ import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
 import RegisterPage from './pages/RegisterPage';
+import ItemFormPage from './pages/ItemFormPage';
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <HomePage />
       <CategoryPage />
       <RegisterPage />
+      <ItemFormPage />
     </div>
   );
 }

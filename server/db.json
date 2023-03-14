@@ -26,6 +26,14 @@
       "role": "user",
       "phoneNumber": "08112212123",
       "address": "graveyard"
+    },
+    {
+      "username": "agif",
+      "email": "agif@agif.com",
+      "password": "123123123",
+      "phoneNumber": "08888253500",
+      "address": "Jl. Mars Barat no. 15",
+      "id": 4
     }
   ],
   "items": [
@@ -160,6 +168,15 @@
       "categoryId": 2,
       "createdAt": "2023-03-13T17:10:00.000Z",
       "updatedAt": "2023-03-13T17:10:00.000Z"
+    },
+    {
+      "name": "Pineapple Pizza",
+      "description": "Cursed pizza by italian",
+      "price": "1000000",
+      "imgUrl": "http://duar.com",
+      "authorId": 1,
+      "categoryId": "1",
+      "id": 13
     }
   ],
   "categories": [

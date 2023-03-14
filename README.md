@@ -23,7 +23,7 @@ Target:
 - [v] Looping List of Data di dalam React
 - [v] Lifecycle component menggunakan useEffect
 - [v] Membuat server (json-server)
-- [ ] Membuat react app untuk client-user (Styling)
+- [v] Membuat react app untuk client-user (Styling)
 - [v] Membuat react app untuk client-admin (CRUD)
 - [v] Menentukan Thema Aplikasi
 - [v] Menentukan Design dan pemilihan CSS Framework

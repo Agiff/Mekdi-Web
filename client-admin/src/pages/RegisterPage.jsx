@@ -20,15 +20,21 @@ const RegisterPage = () => {
     setRegisterForm(newRegisterForm);
   }
 
-  const submitLogin = (e) => {
+  const submitRegister = async (e) => {
     e.preventDefault();
-    console.log(registerForm);
+    await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(registerForm)
+    });
   }
 
   return (
     <>
       <h1>Register</h1>
-      <Form onSubmit={submitLogin}>
+      <Form onSubmit={submitRegister}>
         <Form.Group className="mb-3" controlId="formRegisterUsername">
           <Form.Label>Username</Form.Label>
           <Form.Control type="text" name='username' placeholder="Username" onChange={changeRegisterFormHandler}/>

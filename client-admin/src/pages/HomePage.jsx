@@ -8,6 +8,8 @@ import { getPrice } from '../helpers';
 const HomePage = () => {
   const [items, loading, error] = useFetch('items');
 
+  if (error) return <div>{error}</div>
+
   return (
     <div>
       {
