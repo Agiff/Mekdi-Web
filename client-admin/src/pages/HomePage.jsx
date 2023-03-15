@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -8,8 +8,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { deleteItem, fetchItems } from '../store/actions/actionCreator';
 
 const HomePage = () => {
-  const [itemFormShow, setItemFormShow] = React.useState(false);
-  const { items, loading } = useSelector((state) => state.items)
+  const [itemFormShow, setItemFormShow] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const { items, loading } = useSelector((state) => state.items);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,6 +22,16 @@ const HomePage = () => {
       .catch(err => console.log(err));
   }
 
+  const addItemHandler = () => {
+    setSelectedItem(null);
+    setItemFormShow(true);
+  }
+
+  const editItemHandler = (item) => {
+    setSelectedItem(item);
+    setItemFormShow(true);
+  }
+
   return (
     <div className='container'>
       {
@@ -28,11 +39,12 @@ const HomePage = () => {
           <div className='d-flex justify-content-between'>
             <h1>Home</h1>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => setItemFormShow(true)}>Add</Button>
+            onClick={() => addItemHandler()}>Add</Button>
           </div>
           <ItemForm
             show={itemFormShow}
             onHide={() => setItemFormShow(false)}
+            selectedItem={selectedItem}
           />
           <hr />
           <Table striped bordered hover>
@@ -60,7 +72,7 @@ const HomePage = () => {
                     <td>{item.authorId}</td>
                     <td>{item.categoryId}</td>
                     <td>
-                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>

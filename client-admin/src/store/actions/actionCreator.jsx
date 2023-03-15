@@ -131,3 +131,23 @@ export const deleteCategory = (categoryId) => {
     }
   }
 }
+
+export const updateItem = (payload, itemId) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch('http://localhost:3000/items/' + itemId, {
+        method: 'PUT',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw await response.text();
+      const updatedItem = await response.json();
+      dispatch(fetchItems());
+      return updatedItem;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
