@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { useDispatch } from 'react-redux';
+import { addCategory } from '../store/actions/actionCreator';
 
 const CategoryForm = (props) => {
+  const dispatch = useDispatch();
   const [categoryForm, setCategoryForm] = useState({
     name: '',
     createdAt: new Date(),
@@ -21,14 +24,9 @@ const CategoryForm = (props) => {
 
   const submitAddCategory = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:3000/categories', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(categoryForm)
-    });
-    props.onHide();
+    dispatch(addCategory(categoryForm))
+      .then(() => props.onHide())
+      .catch(err => console.log(err));
   }
 
   return (

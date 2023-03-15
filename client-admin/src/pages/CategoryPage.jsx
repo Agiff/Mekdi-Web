@@ -13,14 +13,14 @@ const CategoryPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategories())
-      .catch(err => console.log(err));
+    dispatch(fetchCategories());
   }, [])
   
   const deleteHandler = async (id) => {
     await fetch('http://localhost:3000/categories/' + id, {
       method: 'DELETE'
     });
+    dispatch(fetchCategories());
   }
 
   return (

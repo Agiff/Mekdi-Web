@@ -39,7 +39,7 @@ export const fetchItems = () => {
       dispatch(loadingItems(false));
       return items;
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   }
 }
@@ -53,6 +53,47 @@ export const fetchCategories = () => {
       const categories = await response.json();
       dispatch(fetchCategoriesSuccess(categories));
       dispatch(loadingCategories(false));
+      return categories;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+export const addItem = (payload) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch('http://localhost:3000/items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw await response.text();
+      const createdItem = await response.json();
+      dispatch(fetchItems());
+      return createdItem;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
+export const addCategory = (payload) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch('http://localhost:3000/categories', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw await response.text();
+      const createdCategory = await response.json();
+      dispatch(fetchCategories());
+      return createdCategory;
     } catch (error) {
       throw error;
     }

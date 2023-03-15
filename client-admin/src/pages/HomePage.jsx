@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -13,14 +13,14 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchItems())
-      .catch(err => console.log(err));
+    dispatch(fetchItems());
   }, [])
 
   const deleteHandler = async (id) => {
     await fetch('http://localhost:3000/items/' + id, {
       method: 'DELETE'
     });
+    dispatch(fetchItems());
   }
 
   return (
