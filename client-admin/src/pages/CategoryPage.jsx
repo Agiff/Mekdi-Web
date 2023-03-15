@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories } from '../store/actions/actionCreator';
+import { deleteCategory, fetchCategories } from '../store/actions/actionCreator';
 
 const CategoryPage = () => {
   const [categoryFormShow, setCategoryFormShow] = React.useState(false);
@@ -16,11 +16,9 @@ const CategoryPage = () => {
     dispatch(fetchCategories());
   }, [])
   
-  const deleteHandler = async (id) => {
-    await fetch('http://localhost:3000/categories/' + id, {
-      method: 'DELETE'
-    });
-    dispatch(fetchCategories());
+  const deleteHandler = (categoryId) => {
+    dispatch(deleteCategory(categoryId))
+      .catch(err => console.log(err));
   }
 
   return (

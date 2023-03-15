@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchItems } from '../store/actions/actionCreator';
+import { deleteItem, fetchItems } from '../store/actions/actionCreator';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = React.useState(false);
@@ -16,11 +16,9 @@ const HomePage = () => {
     dispatch(fetchItems());
   }, [])
 
-  const deleteHandler = async (id) => {
-    await fetch('http://localhost:3000/items/' + id, {
-      method: 'DELETE'
-    });
-    dispatch(fetchItems());
+  const deleteHandler = (itemId) => {
+    dispatch(deleteItem(itemId))
+      .catch(err => console.log(err));
   }
 
   return (

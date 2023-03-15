@@ -99,3 +99,35 @@ export const addCategory = (payload) => {
     }
   }
 }
+
+export const deleteItem = (itemId) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch('http://localhost:3000/items/' + itemId, {
+        method: 'DELETE'
+      });
+      if (!response.ok) throw await response.text();
+      const deletedItem = await response.json();
+      dispatch(fetchItems());
+      return deletedItem;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
+export const deleteCategory = (categoryId) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch('http://localhost:3000/categories/' + categoryId, {
+        method: 'DELETE'
+      });
+      if (!response.ok) throw await response.text();
+      const deletedCategory = await response.json();
+      dispatch(fetchCategories());
+      return deletedCategory;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
