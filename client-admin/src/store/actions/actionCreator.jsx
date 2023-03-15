@@ -151,3 +151,23 @@ export const updateItem = (payload, itemId) => {
     }
   }
 }
+
+export const updateCategory = (payload, categoryId) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch('http://localhost:3000/categories/' + categoryId, {
+        method: 'PUT',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw await response.text();
+      const updatedCategory = await response.json();
+      dispatch(fetchCategories());
+      return updatedCategory;
+    } catch (error) {
+      throw error;
+    }
+  }
+}

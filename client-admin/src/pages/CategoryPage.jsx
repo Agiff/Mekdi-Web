@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -8,7 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteCategory, fetchCategories } from '../store/actions/actionCreator';
 
 const CategoryPage = () => {
-  const [categoryFormShow, setCategoryFormShow] = React.useState(false);
+  const [categoryFormShow, setCategoryFormShow] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const { categories, loading } = useSelector(state => state.categories);
   const dispatch = useDispatch();
 
@@ -21,6 +22,16 @@ const CategoryPage = () => {
       .catch(err => console.log(err));
   }
 
+  const addCategoryHandler = () => {
+    setSelectedCategory(null);
+    setCategoryFormShow(true);
+  }
+
+  const editCategoryHandler = (category) => {
+    setSelectedCategory(category);
+    setCategoryFormShow(true);
+  }
+
   return (
     <div className='container'>
       {
@@ -28,11 +39,12 @@ const CategoryPage = () => {
           <div className='d-flex justify-content-between'>
             <h1>Category</h1>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => setCategoryFormShow(true)}>Add</Button>
+            onClick={() => addCategoryHandler()}>Add</Button>
           </div>
           <CategoryForm
             show={categoryFormShow}
             onHide={() => setCategoryFormShow(false)}
+            selectedCategory={selectedCategory}
           />
           <Table striped bordered hover>
             <thead>
@@ -53,7 +65,7 @@ const CategoryPage = () => {
                     <td>{getDate(category.createdAt)}</td>
                     <td>{getDate(category.updatedAt)}</td>
                     <td>
-                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => editCategoryHandler(category)} variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(category.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
