@@ -4,22 +4,25 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CategoryPage = () => {
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [categoryFormShow, setCategoryFormShow] = React.useState(false);
-  
+  const [error, setError] = useState('');
+  const { categories, loading } = useSelector(state => state);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     async function getCategories() {
       try {
-        let dataCategories = await fetch('http://localhost:3000/categories');
-        if (!dataCategories) throw await dataCategories.text();
-        dataCategories = await dataCategories.json();
-        setCategories(dataCategories);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
+        dispatch({ type: 'categories/changeLoading', payload: true })
+        const response = await fetch('http://localhost:3000/categories');
+        if (!response.ok) throw await response.text();
+        const categories = await response.json();
+        dispatch({ type: 'categories/fetchSuccess', payload: categories })
+        dispatch({ type: 'categories/changeLoading', payload: false })
+      } catch (err) {
+        setError(err);
       }
     }
     getCategories();
@@ -30,6 +33,8 @@ const CategoryPage = () => {
       method: 'DELETE'
     });
   }
+
+  if (error) <div>{error}</div>
 
   return (
     <div className='container'>

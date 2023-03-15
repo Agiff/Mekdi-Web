@@ -42,9 +42,9 @@ Target:
 - [v] Lecture - Custom Hooks
 - [v] Rules of Hooks
 - [v] Lecture - React-Router
-- [ ] Membuat router user-side (min: home, detail)
+- [v] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
-- [ ] Membuat privateRoute untuk admin
+- [v] Membuat privateRoute untuk admin
 
 **Report:**
 

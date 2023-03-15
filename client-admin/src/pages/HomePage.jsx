@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import useFetch from '../hooks/useFetch';
 import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
+import { useSelector, useDispatch } from 'react-redux'
 
 const HomePage = () => {
-  const [items, loading, error] = useFetch('items');
   const [itemFormShow, setItemFormShow] = React.useState(false);
+  const [error, setError] = useState('');
+  const { items, loading } = useSelector((state) => state)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function getItems() {
+      try {
+        dispatch({ type: 'items/changeLoading', payload: true });
+        const response = await fetch('http://localhost:3000/items');
+        if (!response.ok) throw await response.text();
+        const items = await response.json();
+        dispatch({ type: 'items/fetchSuccess', payload: items });
+        dispatch({ type: 'items/changeLoading', payload: false });
+      } catch (err) {
+        setError(err);
+      }
+    }
+    getItems();
+  }, [])
 
   const deleteHandler = async (id) => {
     await fetch('http://localhost:3000/items/' + id, {
