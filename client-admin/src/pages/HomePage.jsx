@@ -5,28 +5,16 @@ import Button from 'react-bootstrap/Button';
 import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchItems, loadingItems } from '../store/actions/actionCreator';
+import { fetchItems } from '../store/actions/actionCreator';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = React.useState(false);
-  const [error, setError] = useState('');
-  const { items, loading } = useSelector((state) => state)
+  const { items, loading } = useSelector((state) => state.items)
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function getItems() {
-      try {
-        dispatch(loadingItems(true));
-        const response = await fetch('http://localhost:3000/items');
-        if (!response.ok) throw await response.text();
-        const items = await response.json();
-        dispatch(fetchItems(items));
-        dispatch(loadingItems(false));
-      } catch (err) {
-        setError(err);
-      }
-    }
-    getItems();
+    dispatch(fetchItems())
+      .catch(err => console.log(err));
   }, [])
 
   const deleteHandler = async (id) => {
@@ -34,8 +22,6 @@ const HomePage = () => {
       method: 'DELETE'
     });
   }
-
-  if (error) return <div>{error}</div>
 
   return (
     <div className='container'>

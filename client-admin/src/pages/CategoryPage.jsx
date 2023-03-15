@@ -1,32 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories, loadingCategories } from '../store/actions/actionCreator';
+import { fetchCategories } from '../store/actions/actionCreator';
 
 const CategoryPage = () => {
   const [categoryFormShow, setCategoryFormShow] = React.useState(false);
-  const [error, setError] = useState('');
-  const { categories, loading } = useSelector(state => state);
+  const { categories, loading } = useSelector(state => state.categories);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function getCategories() {
-      try {
-        dispatch(loadingCategories(true));
-        const response = await fetch('http://localhost:3000/categories');
-        if (!response.ok) throw await response.text();
-        const categories = await response.json();
-        dispatch(fetchCategories(categories));
-        dispatch(loadingCategories(false));
-      } catch (err) {
-        setError(err);
-      }
-    }
-    getCategories();
+    dispatch(fetchCategories())
+      .catch(err => console.log(err));
   }, [])
   
   const deleteHandler = async (id) => {
@@ -34,8 +22,6 @@ const CategoryPage = () => {
       method: 'DELETE'
     });
   }
-
-  if (error) <div>{error}</div>
 
   return (
     <div className='container'>
