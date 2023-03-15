@@ -2,57 +2,77 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer-container">
-        <div className="footer-column">
-          <h3>Our Menu</h3>
-          <ul>
-            <li>Burgers</li>
-            <li>Chicken & Sandwiches</li>
-            <li>Fries & Sides</li>
-            <li>Drinks & Shakes</li>
-            <li>Happy Meals & Toys</li>
-            <li>McCafé & Bakery</li>
-          </ul>
+    <footer className="bg-dark text-light">
+      <div className="container d-flex justify-content-around pt-5">
+        <div className="text-start">
+          <h3 className="mb-3">Menu</h3>
+          <div className="text-secondary">
+            <div className="my-2">
+              <label>Menu Promosi</label>
+            </div>
+            <div className="my-2">
+              <label>A La Carte & Paket</label>
+            </div>
+            <div className="my-2">
+              <label>Tambahan</label>
+            </div>
+            <div className="my-2">
+              <label>Pencuci Mulut</label>
+            </div>
+            <div className="my-2">
+              <label>Minuman</label>
+            </div>
+            <div className="my-2">
+              <label>Happy Meal</label>
+            </div>
+            <div className="my-2">
+              <label>Menu Keluarga</label>
+            </div>
+            <div className="my-2">
+              <label>McCafe Pastries</label>
+            </div>
+            <div className="my-2">
+              <label>McCafe Drinks</label>
+            </div>
+          </div>
         </div>
-        <div className="footer-column">
-          <h3>McDelivery</h3>
-          <ul>
-            <li>Order Now</li>
-            <li>McDelivery Deals</li>
-            <li>Restaurants</li>
-            <li>FAQs</li>
-            <li>Contact Us</li>
-          </ul>
+        <div className="text-start">
+          <h3 className="mb-3">Bantuan</h3>
+          <div className="text-secondary">
+            <div className="my-2">
+              <label>Syarat dan Ketentuan</label>
+            </div>
+            <div className="my-2">
+              <label>Kebijakan Privasi</label>
+            </div>
+            <div className="my-2">
+              <label>Tanya Jawab</label>
+            </div>
+            <div className="my-2">
+              <label>Mobile Web</label>
+            </div>
+          </div>
         </div>
-        <div className="footer-column">
-          <h3>Company</h3>
-          <ul>
-            <li>About Us</li>
-            <li>Newsroom</li>
-            <li>Investors</li>
-            <li>Careers</li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Legal</h3>
-          <ul>
-            <li>Terms & Conditions</li>
-            <li>Privacy</li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Follow Us</h3>
-          <ul className="social-icons">
-            <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i className="fab fa-youtube"></i></a></li>
-          </ul>
+        <div className="text-start">
+          <h3 className="mb-3">Ikuti Kami</h3>
+          <div className="text-secondary">
+            <div className="my-2">
+              <label>Facebook</label>
+            </div>
+            <div className="my-2">
+              <label>Twitter</label>
+            </div>
+            <div className="my-2">
+              <label>YouTube</label>
+            </div>
+            <div className="my-2">
+              <label>Instagram</label>
+            </div>
+          </div>
         </div>
       </div>
       <hr />
-      <div className="legal-text">
+      <div className="legal-text pb-1">
         <p>&copy; McDonald's Corporation 2023. All rights reserved.</p>
       </div>
     </footer>

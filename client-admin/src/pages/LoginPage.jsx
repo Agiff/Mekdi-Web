@@ -29,15 +29,15 @@ const LoginPage = () => {
     <div className='container vh-100 d-flex justify-content-center align-items-center'>
       <div className='card w-50 p-4'>
         <h1 className='mb-5'>Login</h1>
-        <Form onSubmit={submitLogin}>
+        <Form onSubmit={submitLogin} style={{textAlign: 'start'}}>
           <Form.Group className="mb-3" controlId="formLoginEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name='email' placeholder="Enter email" onChange={changeLoginFormHandler}/>
+            <Form.Control type="email" name='email' onChange={changeLoginFormHandler}/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formLoginPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name='password' placeholder="Password" onChange={changeLoginFormHandler}/>
+            <Form.Control type="password" name='password' onChange={changeLoginFormHandler}/>
           </Form.Group>
           <Button variant="primary" type="submit">
             Sign In

@@ -19,12 +19,12 @@ const CustomNavbar = () => {
           <Navbar.Brand href="/">Pizza Donald</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/categories">Category</Nav.Link>
               <Nav.Link href="/register">Register Admin</Nav.Link>
+              <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
             </Nav>
-            <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
