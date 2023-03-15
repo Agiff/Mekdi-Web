@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategories, loadingCategories } from '../store/actions/actionCreator';
 
 const CategoryPage = () => {
   const [categoryFormShow, setCategoryFormShow] = React.useState(false);
@@ -15,12 +16,12 @@ const CategoryPage = () => {
   useEffect(() => {
     async function getCategories() {
       try {
-        dispatch({ type: 'categories/changeLoading', payload: true })
+        dispatch(loadingCategories(true));
         const response = await fetch('http://localhost:3000/categories');
         if (!response.ok) throw await response.text();
         const categories = await response.json();
-        dispatch({ type: 'categories/fetchSuccess', payload: categories })
-        dispatch({ type: 'categories/changeLoading', payload: false })
+        dispatch(fetchCategories(categories));
+        dispatch(loadingCategories(false));
       } catch (err) {
         setError(err);
       }

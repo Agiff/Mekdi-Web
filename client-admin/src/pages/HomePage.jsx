@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
+import { fetchItems, loadingItems } from '../store/actions/actionCreator';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = React.useState(false);
@@ -15,12 +16,12 @@ const HomePage = () => {
   useEffect(() => {
     async function getItems() {
       try {
-        dispatch({ type: 'items/changeLoading', payload: true });
+        dispatch(loadingItems(true));
         const response = await fetch('http://localhost:3000/items');
         if (!response.ok) throw await response.text();
         const items = await response.json();
-        dispatch({ type: 'items/fetchSuccess', payload: items });
-        dispatch({ type: 'items/changeLoading', payload: false });
+        dispatch(fetchItems(items));
+        dispatch(loadingItems(false));
       } catch (err) {
         setError(err);
       }

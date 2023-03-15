@@ -1,36 +1,6 @@
 import { legacy_createStore as createStore } from 'redux'
+import rootReducer from './reducers/rootReducers'
 
-const initialState = { items: [], loading: true, categories: [] }
-
-function globalReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'items/fetchSuccess':
-      return {
-        ...state,
-        items: action.payload
-      }
-    case 'items/changeLoading':
-      return {
-        ...state,
-        loading: action.payload
-      }
-    case 'categories/fetchSuccess':
-      return {
-        ...state,
-        categories: action.payload
-      }
-    case 'categories/changeLoading':
-      return {
-        ...state,
-        loading: action.payload
-      }
-    default:
-      return state
-  }
-}
-
-let store = createStore(globalReducer)
-
-store.subscribe(() => console.log(store.getState()))
+let store = createStore(rootReducer)
 
 export default store
