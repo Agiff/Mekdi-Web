@@ -37,11 +37,22 @@ class itemController {
     try {
       const { id } = req.params;
       const { name, description, price, imgUrl, categoryId } = req.body;
-
       const item = await Item.findByPk(id);
       if (!item) throw { name: 'NotFound' };
       const updatedItem = await item.update({ name, description, price, imgUrl, categoryId });
       res.status(200).json(updatedItem);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async deleteItem(req, res, next) {
+    try {
+      const { id } = req.params;
+      const item = await Item.findByPk(id);
+      if (!item) throw { name: 'Not Found' };
+      await item.destroy();
+      res.status(200).json({ message: 'Item deleted' })
     } catch (error) {
       next(error);
     }
