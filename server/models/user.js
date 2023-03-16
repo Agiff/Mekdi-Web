@@ -14,9 +14,38 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        args: true,
+        msg: 'Your email is already registered'
+      },
+      validate: {
+        notNull: { msg: 'Email is required' },
+        notEmpty: { msg: 'Email is required' },
+        isEmail: { msg: 'Email format is invalid' }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: { msg: 'Password is required' },
+        notEmpty: { msg: 'Password is required' },
+        len: {
+          args: [5],
+          msg: 'Password minimum length is 5'
+        }
+      }
+    },
     role: DataTypes.STRING,
     phoneNumber: DataTypes.STRING,
     address: DataTypes.STRING

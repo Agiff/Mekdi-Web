@@ -3,7 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, fetchCategories, updateItem } from '../store/actions/actionCreator';
+import { fetchCategories } from '../store/actions/actionCategory';
+import { addItem, updateItem } from '../store/actions/actionItem';
 
 const ItemForm = ({ show, onHide, selectedItem }) => {
   const dispatch = useDispatch();

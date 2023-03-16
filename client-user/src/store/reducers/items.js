@@ -1,6 +1,6 @@
-import { ITEMS_CHANGE_LOADING, ITEMS_FETCH_SUCCESS } from "../actions/actionType"
+import { ITEMS_CHANGE_LOADING, ITEMS_FETCH_SUCCESS, ITEM_DETAIL_FETCH_SUCCESS } from "../actions/actionType"
 
-const initialState = { items: [], loading: true }
+const initialState = { items: [], itemDetail: {}, loading: true }
 
 function itemReducer(state = initialState, action) {
   switch (action.type) {
@@ -13,6 +13,11 @@ function itemReducer(state = initialState, action) {
       return {
         ...state,
         loading: action.payload
+      }
+    case ITEM_DETAIL_FETCH_SUCCESS:
+      return {
+        ...state,
+        itemDetail: action.payload
       }
     default:
       return state

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteItem, fetchItems } from '../store/actions/actionCreator';
+import { deleteItem, fetchItems } from '../store/actions/actionItem';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = useState(false);
