@@ -32,6 +32,20 @@ class itemController {
       next(error);
     }
   }
+
+  static async updateItem(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { name, description, price, imgUrl, categoryId } = req.body;
+
+      const item = await Item.findByPk(id);
+      if (!item) throw { name: 'NotFound' };
+      const updatedItem = await item.update({ name, description, price, imgUrl, categoryId });
+      res.status(200).json(updatedItem);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = itemController;
