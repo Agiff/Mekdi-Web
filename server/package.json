@@ -10,7 +10,9 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "reset-db": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"

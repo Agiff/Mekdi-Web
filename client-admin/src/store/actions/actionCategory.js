@@ -19,7 +19,11 @@ export const fetchCategories = () => {
   return async (dispatch, getState) => {
     try {
       dispatch(loadingCategories(true));
-      const response = await fetch(baseUrl + 'categories');
+      const response = await fetch(baseUrl + 'categories', {
+        headers: {
+          access_token: localStorage.access_token
+        }
+      });
       if (!response.ok) throw await response.text();
       const categories = await response.json();
       dispatch(fetchCategoriesSuccess(categories));
@@ -37,7 +41,8 @@ export const addCategory = (payload) => {
       const response = await fetch(baseUrl + 'categories', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          access_token: localStorage.access_token
         },
         body: JSON.stringify(payload)
       });
@@ -55,7 +60,10 @@ export const deleteCategory = (categoryId) => {
   return async (dispatch, getState) => {
     try {
       const response = await fetch(baseUrl + 'categories/' + categoryId, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          access_token: localStorage.access_token
+        }
       });
       if (!response.ok) throw await response.text();
       const deletedCategory = await response.json();
@@ -73,7 +81,8 @@ export const updateCategory = (payload, categoryId) => {
       const response = await fetch(baseUrl + 'categories/' + categoryId, {
         method: 'PUT',
         headers: {
-          'Content-type': 'application/json'
+          'Content-type': 'application/json',
+          access_token: localStorage.access_token
         },
         body: JSON.stringify(payload)
       });

@@ -8,23 +8,17 @@ import { addCategory, updateCategory } from '../store/actions/actionCategory';
 const CategoryForm = ({ show, onHide, selectedCategory }) => {
   const dispatch = useDispatch();
   const [categoryForm, setCategoryForm] = useState({
-    name: '',
-    createdAt: new Date(),
-    updatedAt: new Date()
+    name: ''
   });
 
   useEffect(() => {
     if (selectedCategory) {
       setCategoryForm({
-        name: selectedCategory.name,
-        createdAt: selectedCategory.createdAt,
-        updatedAt: selectedCategory.updatedAt
+        name: selectedCategory.name
       })
     } else {
       setCategoryForm({
-        name: '',
-        createdAt: new Date(),
-        updatedAt: new Date()
+        name: ''
       })
     }
   }, [selectedCategory])

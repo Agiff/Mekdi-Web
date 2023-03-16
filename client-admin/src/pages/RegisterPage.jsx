@@ -25,14 +25,21 @@ const RegisterPage = () => {
 
   const submitRegister = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:3000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(registerForm)
-    });
-    navigate('/login');
+    try {
+      const baseUrl = 'http://localhost:3000/'
+      const response = await fetch(baseUrl + 'users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          access_token: localStorage.access_token
+        },
+        body: JSON.stringify(registerForm)
+      });
+      if (!response.ok) throw await response.json();
+      navigate('/login');
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   return (
