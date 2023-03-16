@@ -1,9 +1,22 @@
-const { Item } = require('../models');
+const { Item, Ingredient, Category, User } = require('../models');
 
 class itemController {
   static async showItems(req, res, next) {
     try {
-      const items = await Item.findAll();
+      const items = await Item.findAll({
+        include: [Category, User]
+      });
+      res.status(200).json(items);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getUserItems(req, res, next) {
+    try {
+      const items = await Item.findAll({
+        include: [Category, Ingredient]
+      });
       res.status(200).json(items);
     } catch (error) {
       next(error);
@@ -13,7 +26,22 @@ class itemController {
   static async showItemDetail(req, res, next) {
     try {
       const { id } = req.params;
-      const item = await Item.findByPk(id);
+      const item = await Item.findByPk(id, {
+        include: [Category, Ingredient]
+      });
+      if (!item) throw { name: 'NotFound' };
+      res.status(200).json(item);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getUserItemDetail(req, res, next) {
+    try {
+      const { id } = req.params;
+      const item = await Item.findByPk(id, {
+        include: [Category, Ingredient]
+      });
       if (!item) throw { name: 'NotFound' };
       res.status(200).json(item);
     } catch (error) {
