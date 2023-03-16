@@ -1,7 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
       "username": "seirei",
       "email": "a@a.com",
       "password": "a",
@@ -10,7 +9,6 @@
       "address": "somewhere"
     },
     {
-      "id": 2,
       "username": "agif",
       "email": "agif@mail.com",
       "password": "qwe",
@@ -19,7 +17,6 @@
       "address": "dokoka"
     },
     {
-      "id": 3,
       "username": "ded",
       "email": "ded@mail.com",
       "password": "qwe",
@@ -32,13 +29,11 @@
       "email": "agif@agif.com",
       "password": "123123123",
       "phoneNumber": "08888253500",
-      "address": "Jl. Mars Barat no. 15",
-      "id": 4
+      "address": "Jl. Mars Barat no. 15"
     }
   ],
   "items": [
     {
-      "id": 1,
       "name": "Margherita Pizza",
       "description": "A classic pizza with tomato sauce, mozzarella cheese, and basil",
       "price": 120000,
@@ -47,7 +42,6 @@
       "categoryId": 1
     },
     {
-      "id": 2,
       "name": "Pepperoni Pizza",
       "description": "A classic pizza with tomato sauce, mozzarella cheese, and pepperoni slices",
       "price": 150000,
@@ -56,7 +50,6 @@
       "categoryId": 1
     },
     {
-      "id": 3,
       "name": "Veggie Pizza",
       "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, and assorted vegetables",
       "price": 130000,
@@ -65,7 +58,6 @@
       "categoryId": 1
     },
     {
-      "id": 4,
       "name": "Hawaiian Pizza",
       "description": "A pizza with tomato sauce, mozzarella cheese, ham, and pineapple",
       "price": 140000,
@@ -74,7 +66,6 @@
       "categoryId": 1
     },
     {
-      "id": 5,
       "name": "Meat Lovers Pizza",
       "description": "A pizza with tomato sauce, mozzarella cheese, pepperoni, sausage, and bacon",
       "price": 160000,
@@ -83,7 +74,6 @@
       "categoryId": 1
     },
     {
-      "id": 6,
       "name": "BBQ Chicken Pizza",
       "description": "A pizza with BBQ sauce, mozzarella cheese, chicken, red onion, and cilantro",
       "price": 170000,
@@ -92,7 +82,6 @@
       "categoryId": 1
     },
     {
-      "id": 7,
       "name": "Mushroom Pizza",
       "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, and assorted mushrooms",
       "price": 130000,
@@ -101,7 +90,6 @@
       "categoryId": 1
     },
     {
-      "id": 8,
       "name": "White Pizza",
       "description": "A pizza with garlic-infused olive oil, mozzarella cheese, and assorted toppings",
       "price": 150000,
@@ -110,7 +98,6 @@
       "categoryId": 1
     },
     {
-      "id": 9,
       "name": "Veggie Supreme Pizza",
       "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, bell peppers, onions, mushrooms, and olives",
       "price": 150000,
@@ -119,7 +106,6 @@
       "categoryId": 1
     },
     {
-      "id": 10,
       "name": "Coca-Cola",
       "description": "A classic soda made with Coca-Cola's secret recipe",
       "price": 50000,
@@ -128,7 +114,6 @@
       "categoryId": 2
     },
     {
-      "id": 11,
       "name": "Orange Juice",
       "description": "A refreshing glass of orange juice made from fresh oranges",
       "price": 75000,
@@ -137,74 +122,47 @@
       "categoryId": 2
     },
     {
-      "id": 12,
       "name": "Iced Tea",
       "description": "A refreshing and sweetened iced tea made from tea leaves",
       "price": 60000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 3,
       "categoryId": 2
-    },
-    {
-      "name": "Chocolate Pizza",
-      "description": "Cursed pizza that tastes like martabak lezadd",
-      "price": "150000",
-      "imgUrl": "adsfasdfqewr",
-      "authorId": 1,
-      "categoryId": "4",
-      "id": 13
     }
   ],
   "categories": [
     {
-      "id": 1,
       "name": "food"
     },
     {
-      "id": 2,
       "name": "beverage"
     },
     {
-      "name": "snack",
-      "id": 3
-    },
-    {
-      "name": "cakey",
-      "id": 4
-    },
-    {
-      "name": "ice shake",
-      "id": 5
+      "name": "snack"
     }
   ],
   "ingredients": [
     {
-      "id": 1,
       "itemId": 1,
       "name": "flour"
     },
     {
-      "id": 2,
       "itemId": 1,
       "name": "meat"
     },
     {
-      "id": 3,
       "itemId": 11,
       "name": "water"
     },
     {
-      "id": 4,
       "itemId": 11,
       "name": "sugar"
     },
     {
-      "id": 5,
       "itemId": 2,
       "name": "flour"
     },
     {
-      "id": 6,
       "itemId": 2,
       "name": "sausage"
     }

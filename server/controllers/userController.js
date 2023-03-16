@@ -20,6 +20,23 @@ class userController {
       next(error);
     }
   }
+
+  static async register(req, res, next) {
+    try {
+      const { username, email, password, phoneNumber, address } = req.body;
+      const createdUser = await User.create({ username, email, password, phoneNumber, address });
+      res.status(201).json({
+        id: createdUser.id,
+        username: createdUser.username,
+        email: createdUser.email,
+        phoneNumber: createdUser.phoneNumber,
+        address: createdUser.address,
+        role: 'admin'
+      })
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = userController;
