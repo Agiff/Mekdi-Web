@@ -14,7 +14,6 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
     description: '',
     price: 0,
     imgUrl: '',
-    authorId: 1,
     categoryId: 0
   });
 
@@ -26,7 +25,6 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
         description: selectedItem.description,
         price: selectedItem.price,
         imgUrl: selectedItem.imgUrl,
-        authorId: selectedItem.authorId,
         categoryId: selectedItem.categoryId
       })
     } else {
@@ -35,8 +33,7 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
         description: '',
         price: 0,
         imgUrl: '',
-        authorId: 1,
-        categoryId: 0
+        categoryId: 1
       })
     }
   }, [selectedItem])

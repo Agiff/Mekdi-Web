@@ -19,10 +19,24 @@ const LoginPage = () => {
     setLoginForm(newLoginForm);
   }
 
-  const submitLogin = (e) => {
+  const submitLogin = async (e) => {
     e.preventDefault();
-    localStorage.access_token = loginForm;
-    navigate('/');
+    try {
+      const baseUrl = 'http://localhost:3000/'
+      const response = await fetch(baseUrl + 'users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginForm)
+      });
+      if (!response.ok) throw await response.json();
+      const { access_token } = await response.json();
+      localStorage.access_token = access_token;
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   return (
