@@ -151,7 +151,7 @@
       "price": "150000",
       "imgUrl": "adsfasdfqewr",
       "authorId": 1,
-      "categoryId": 1,
+      "categoryId": "4",
       "id": 13
     }
   ],

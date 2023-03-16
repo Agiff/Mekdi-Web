@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteCategory, fetchCategories } from '../store/actions/actionCreator';
+import { deleteCategory, fetchCategories } from '../store/actions/actionCategory';
 
 const CategoryPage = () => {
   const [categoryFormShow, setCategoryFormShow] = useState(false);

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
-import { addCategory, updateCategory } from '../store/actions/actionCreator';
+import { addCategory, updateCategory } from '../store/actions/actionCategory';
 
 const CategoryForm = ({ show, onHide, selectedCategory }) => {
   const dispatch = useDispatch();

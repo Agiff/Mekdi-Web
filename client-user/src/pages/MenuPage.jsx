@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ItemCard from '../components/ItemCard';
 import Loading from '../components/Loading';
-import { fetchItems } from '../store/actions/actionCreator';
+import { fetchItems } from '../store/actions/actionItem';
 
 const MenuPage = () => {
   const { items, loading } = useSelector(state => state.items);
