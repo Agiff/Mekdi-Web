@@ -44,9 +44,7 @@
       "price": 120000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 2,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T15:40:17.000Z",
-      "updatedAt": "2023-03-13T15:40:17.000Z"
+      "categoryId": 1
     },
     {
       "id": 2,
@@ -55,9 +53,7 @@
       "price": 150000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 3,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T15:45:03.000Z",
-      "updatedAt": "2023-03-13T15:45:03.000Z"
+      "categoryId": 1
     },
     {
       "id": 3,
@@ -66,9 +62,7 @@
       "price": 130000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 2,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T15:50:12.000Z",
-      "updatedAt": "2023-03-13T15:50:12.000Z"
+      "categoryId": 1
     },
     {
       "id": 4,
@@ -77,9 +71,7 @@
       "price": 140000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 1,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T16:00:00.000Z",
-      "updatedAt": "2023-03-13T16:00:00.000Z"
+      "categoryId": 1
     },
     {
       "id": 5,
@@ -88,9 +80,7 @@
       "price": 160000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 3,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T16:10:00.000Z",
-      "updatedAt": "2023-03-13T16:10:00.000Z"
+      "categoryId": 1
     },
     {
       "id": 6,
@@ -99,9 +89,7 @@
       "price": 170000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 2,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T16:20:00.000Z",
-      "updatedAt": "2023-03-13T16:20:00.000Z"
+      "categoryId": 1
     },
     {
       "id": 7,
@@ -110,9 +98,7 @@
       "price": 130000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 2,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T16:30:00.000Z",
-      "updatedAt": "2023-03-13T16:30:00.000Z"
+      "categoryId": 1
     },
     {
       "id": 8,
@@ -121,9 +107,7 @@
       "price": 150000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 1,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T16:40:00.000Z",
-      "updatedAt": "2023-03-13T16:40:00.000Z"
+      "categoryId": 1
     },
     {
       "id": 9,
@@ -132,9 +116,7 @@
       "price": 150000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 3,
-      "categoryId": 1,
-      "createdAt": "2023-03-13T16:50:00.000Z",
-      "updatedAt": "2023-03-13T16:50:00.000Z"
+      "categoryId": 1
     },
     {
       "id": 10,
@@ -143,9 +125,7 @@
       "price": 50000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 2,
-      "categoryId": 2,
-      "createdAt": "2023-03-13T17:00:00.000Z",
-      "updatedAt": "2023-03-13T17:00:00.000Z"
+      "categoryId": 2
     },
     {
       "id": 11,
@@ -154,9 +134,7 @@
       "price": 75000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 2,
-      "categoryId": 2,
-      "createdAt": "2023-03-13T17:05:00.000Z",
-      "updatedAt": "2023-03-13T17:05:00.000Z"
+      "categoryId": 2
     },
     {
       "id": 12,
@@ -165,9 +143,7 @@
       "price": 60000,
       "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
       "authorId": 3,
-      "categoryId": 2,
-      "createdAt": "2023-03-13T17:10:00.000Z",
-      "updatedAt": "2023-03-13T17:10:00.000Z"
+      "categoryId": 2
     },
     {
       "name": "Chocolate Pizza",
@@ -175,39 +151,29 @@
       "price": "150000",
       "imgUrl": "adsfasdfqewr",
       "authorId": 1,
-      "categoryId": 0,
+      "categoryId": 1,
       "id": 13
     }
   ],
   "categories": [
     {
       "id": 1,
-      "name": "food",
-      "createdAt": "2023-03-13T17:05:00.000Z",
-      "updatedAt": "2023-03-13T17:05:00.000Z"
+      "name": "food"
     },
     {
       "id": 2,
-      "name": "beverage",
-      "createdAt": "2023-03-13T17:05:00.000Z",
-      "updatedAt": "2023-03-13T17:05:00.000Z"
+      "name": "beverage"
     },
     {
       "name": "snack",
-      "createdAt": "2023-03-15T10:43:00.780Z",
-      "updatedAt": "2023-03-15T10:43:00.780Z",
       "id": 3
     },
     {
       "name": "cakey",
-      "createdAt": "2023-03-15T10:44:45.173Z",
-      "updatedAt": "2023-03-15T10:44:45.173Z",
       "id": 4
     },
     {
       "name": "ice shake",
-      "createdAt": "2023-03-15T10:51:21.526Z",
-      "updatedAt": "2023-03-15T10:51:21.526Z",
       "id": 5
     }
   ],
