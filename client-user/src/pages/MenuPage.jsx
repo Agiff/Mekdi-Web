@@ -1,13 +1,17 @@
-import React from 'react';
-import useFetch from '../hooks/useFetch';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ItemCard from '../components/ItemCard';
 import Loading from '../components/Loading';
+import { fetchItems } from '../store/actions/actionCreator';
 
 const MenuPage = () => {
-  const [items, loading, error] = useFetch('items');
+  const { items, loading } = useSelector(state => state.items);
+  const dispatch = useDispatch();
 
-  if (error) return <div>{error}</div>
-
+  useEffect(() => {
+    dispatch(fetchItems());
+  }, [])
+  
   return (
     <div>
       <h1>Menu</h1>

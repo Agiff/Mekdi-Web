@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import useFetch from '../hooks/useFetch';
 import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
+import { useSelector, useDispatch } from 'react-redux'
+import { deleteItem, fetchItems } from '../store/actions/actionCreator';
 
 const HomePage = () => {
-  const [items, loading, error] = useFetch('items');
-  const [itemFormShow, setItemFormShow] = React.useState(false);
+  const [itemFormShow, setItemFormShow] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const { items, loading } = useSelector((state) => state.items);
+  const dispatch = useDispatch();
 
-  const deleteHandler = async (id) => {
-    await fetch('http://localhost:3000/items/' + id, {
-      method: 'DELETE'
-    });
+  useEffect(() => {
+    dispatch(fetchItems());
+  }, [])
+
+  const deleteHandler = (itemId) => {
+    dispatch(deleteItem(itemId))
+      .catch(err => console.log(err));
   }
 
-  if (error) return <div>{error}</div>
+  const addItemHandler = () => {
+    setSelectedItem(null);
+    setItemFormShow(true);
+  }
+
+  const editItemHandler = (item) => {
+    setSelectedItem(item);
+    setItemFormShow(true);
+  }
 
   return (
     <div className='container'>
@@ -25,11 +39,12 @@ const HomePage = () => {
           <div className='d-flex justify-content-between'>
             <h1>Home</h1>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => setItemFormShow(true)}>Add</Button>
+            onClick={() => addItemHandler()}>Add</Button>
           </div>
           <ItemForm
             show={itemFormShow}
             onHide={() => setItemFormShow(false)}
+            selectedItem={selectedItem}
           />
           <hr />
           <Table striped bordered hover>
@@ -57,7 +72,7 @@ const HomePage = () => {
                     <td>{item.authorId}</td>
                     <td>{item.categoryId}</td>
                     <td>
-                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>

@@ -5,7 +5,7 @@ import Login from '../components/Login';
 const HomePage = () => {
   return (
     <div className='bg-secondary'>
-      <div className='card bg-light bg-opacity-75' style={{position: 'absolute', right: '3%', top: '10%', zIndex: '1'}}>
+      <div className='card bg-light bg-opacity-75' style={{position: 'absolute', right: '3%', top: '15%', zIndex: '1'}}>
         <Login/>
       </div>
       <Carousel fade style={{zIndex: '0'}}>

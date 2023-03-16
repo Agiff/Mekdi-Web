@@ -168,6 +168,15 @@
       "categoryId": 2,
       "createdAt": "2023-03-13T17:10:00.000Z",
       "updatedAt": "2023-03-13T17:10:00.000Z"
+    },
+    {
+      "name": "Chocolate Pizza",
+      "description": "Cursed pizza that tastes like martabak lezadd",
+      "price": "150000",
+      "imgUrl": "adsfasdfqewr",
+      "authorId": 1,
+      "categoryId": 0,
+      "id": 13
     }
   ],
   "categories": [
@@ -182,6 +191,24 @@
       "name": "beverage",
       "createdAt": "2023-03-13T17:05:00.000Z",
       "updatedAt": "2023-03-13T17:05:00.000Z"
+    },
+    {
+      "name": "snack",
+      "createdAt": "2023-03-15T10:43:00.780Z",
+      "updatedAt": "2023-03-15T10:43:00.780Z",
+      "id": 3
+    },
+    {
+      "name": "cakey",
+      "createdAt": "2023-03-15T10:44:45.173Z",
+      "updatedAt": "2023-03-15T10:44:45.173Z",
+      "id": 4
+    },
+    {
+      "name": "ice shake",
+      "createdAt": "2023-03-15T10:51:21.526Z",
+      "updatedAt": "2023-03-15T10:51:21.526Z",
+      "id": 5
     }
   ],
   "ingredients": [

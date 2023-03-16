@@ -42,9 +42,9 @@ Target:
 - [v] Lecture - Custom Hooks
 - [v] Rules of Hooks
 - [v] Lecture - React-Router
-- [ ] Membuat router user-side (min: home, detail)
-- [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
-- [ ] Membuat privateRoute untuk admin
+- [v] Membuat router user-side (min: home, detail)
+- [v] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
+- [v] Membuat privateRoute untuk admin
 
 **Report:**
 
@@ -54,15 +54,15 @@ Target:
 
 Target:
 
-- [ ] Lecture - Redux
-- [ ] State vs Global State
-- [ ] Bagaimana cara membuat Store
-- [ ] Bagaimana cara membuat Reducer
-- [ ] Bagaimana cara membuat Action
-- [ ] Membuat Action Creators
-- [ ] Membuat Action Types
-- [ ] Lecture - Redux-thunk (handle async)
-- [ ] Cara menggunakan combineReducers
+- [v] Lecture - Redux
+- [v] State vs Global State
+- [v] Bagaimana cara membuat Store
+- [v] Bagaimana cara membuat Reducer
+- [v] Bagaimana cara membuat Action
+- [v] Membuat Action Creators
+- [v] Membuat Action Types
+- [v] Lecture - Redux-thunk (handle async)
+- [v] Cara menggunakan combineReducers
 
 **Report:**
 

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { getPrice } from '../helpers';
-import useFetch from '../hooks/useFetch';
+import { fetchItems } from '../store/actions/actionCreator';
 
 const DetailPage = () => {
   const { itemId } = useParams();
-  const [item, loading, error] = useFetch('items', itemId)
+  const dispatch = useDispatch();
+  const { items: item, loading } = useSelector(state => state.items);
 
-  if (error) return <div>{error}</div>
+  useEffect(() => {
+    dispatch(fetchItems(itemId));
+  }, [])
 
   return (
     <>

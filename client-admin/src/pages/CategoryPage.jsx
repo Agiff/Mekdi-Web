@@ -4,31 +4,32 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteCategory, fetchCategories } from '../store/actions/actionCreator';
 
 const CategoryPage = () => {
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [categoryFormShow, setCategoryFormShow] = React.useState(false);
-  
+  const [categoryFormShow, setCategoryFormShow] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const { categories, loading } = useSelector(state => state.categories);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    async function getCategories() {
-      try {
-        let dataCategories = await fetch('http://localhost:3000/categories');
-        if (!dataCategories) throw await dataCategories.text();
-        dataCategories = await dataCategories.json();
-        setCategories(dataCategories);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getCategories();
+    dispatch(fetchCategories());
   }, [])
   
-  const deleteHandler = async (id) => {
-    await fetch('http://localhost:3000/categories/' + id, {
-      method: 'DELETE'
-    });
+  const deleteHandler = (categoryId) => {
+    dispatch(deleteCategory(categoryId))
+      .catch(err => console.log(err));
+  }
+
+  const addCategoryHandler = () => {
+    setSelectedCategory(null);
+    setCategoryFormShow(true);
+  }
+
+  const editCategoryHandler = (category) => {
+    setSelectedCategory(category);
+    setCategoryFormShow(true);
   }
 
   return (
@@ -38,11 +39,12 @@ const CategoryPage = () => {
           <div className='d-flex justify-content-between'>
             <h1>Category</h1>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => setCategoryFormShow(true)}>Add</Button>
+            onClick={() => addCategoryHandler()}>Add</Button>
           </div>
           <CategoryForm
             show={categoryFormShow}
             onHide={() => setCategoryFormShow(false)}
+            selectedCategory={selectedCategory}
           />
           <Table striped bordered hover>
             <thead>
@@ -63,7 +65,7 @@ const CategoryPage = () => {
                     <td>{getDate(category.createdAt)}</td>
                     <td>{getDate(category.updatedAt)}</td>
                     <td>
-                      <Button variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => editCategoryHandler(category)} variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(category.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
