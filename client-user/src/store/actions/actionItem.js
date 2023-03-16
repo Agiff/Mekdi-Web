@@ -1,5 +1,5 @@
 import { ITEMS_CHANGE_LOADING, ITEMS_FETCH_SUCCESS, ITEM_DETAIL_FETCH_SUCCESS } from "./actionType"
-const baseUrl = 'http://localhost:3000/';
+const baseUrl = 'http://localhost:3000/users/';
 
 export const fetchItemsSuccess = (payload) => {
   return {
@@ -27,12 +27,12 @@ export const fetchItems = () => {
     try {
       dispatch(loadingItems(true));
       let response = await fetch(baseUrl + 'items');
-      if (!response.ok) throw await response.text();
+      if (!response.ok) throw await response.json();
       response = await response.json();
       dispatch(fetchItemsSuccess(response));
       dispatch(loadingItems(false));
     } catch (error) {
-      console.log(error);
+      throw error.message;
     }
   }
 }
@@ -42,12 +42,12 @@ export const fetchItemDetail = (itemId) => {
     try {
       dispatch(loadingItems(true));
       let response = await fetch(baseUrl + 'items/' + itemId);
-      if (!response.ok) throw await response.text();
+      if (!response.ok) throw await response.json();
       response = await response.json();
       dispatch(fetchItemDetailSuccess(response));
       dispatch(loadingItems(false));
     } catch (error) {
-      console.log(error);
+      throw error.message;
     }
   }
 }

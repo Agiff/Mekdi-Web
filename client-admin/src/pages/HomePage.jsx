@@ -55,7 +55,7 @@ const HomePage = () => {
                 <th width="250">Description</th>
                 <th>Price</th>
                 <th>Image</th>
-                <th>Author</th>
+                <th>Created By</th>
                 <th>Category</th>
                 <th>Actions</th>
               </tr>
@@ -69,8 +69,8 @@ const HomePage = () => {
                     <td>{item.description}</td>
                     <td>{getPrice(item.price)}</td>
                     <td><img src={item.imgUrl} alt={item.name} width="100" /></td>
-                    <td>{item.authorId}</td>
-                    <td>{item.categoryId}</td>
+                    <td>{item.User.username}</td>
+                    <td>{item.Category.name}</td>
                     <td>
                       <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
