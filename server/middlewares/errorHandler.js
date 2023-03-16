@@ -14,6 +14,15 @@ const errorHandler = (err, req, res, next) => {
     case 'EmailPasswordInvalid':
       res.status(401).json({ message: 'Email or Password is invalid' });
       break;
+
+    case 'InvalidToken':
+    case 'JsonWebTokenError':
+      res.status(401).json({ message: 'Invalid Token' });
+      break;
+
+    case 'NotFound':
+      res.status(404).json({ message: 'Data not found' });
+      break;
   
     default:
       break;
