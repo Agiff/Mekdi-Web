@@ -27,9 +27,22 @@ const DetailPage = () => {
             <h4>{itemDetail.name}</h4>
             <div className='d-flex justify-content-between pe-4'>
               <h4>{getPrice(itemDetail.price)}</h4>
-              <h4>{itemDetail.categoryId}</h4>
+              <h4>{itemDetail.Category?.name}</h4>
             </div>
             <p>{itemDetail.description}</p>
+            <h5>Ingredients: </h5>
+            {
+              itemDetail.Ingredients?.length <= 0 ? '-' :
+              <>
+                {
+                  itemDetail.Ingredients?.map((ingredient, index) => {
+                    return (
+                      <p key={index}>{index+1}. {ingredient.name}</p>
+                    )
+                  })
+                }
+              </>
+            }
           </div>
         </div>
       }
