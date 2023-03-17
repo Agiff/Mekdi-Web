@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -34,8 +35,9 @@ const LoginPage = () => {
       const { access_token } = await response.json();
       localStorage.access_token = access_token;
       navigate('/');
+      successAlert('Logged in');
     } catch (error) {
-      console.log(error.message);
+      failureAlert(error.message);
     }
   }
 

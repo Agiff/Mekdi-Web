@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
 import { addCategory, updateCategory } from '../store/actions/actionCategory';
 
 const CategoryForm = ({ show, onHide, selectedCategory }) => {
@@ -36,15 +37,21 @@ const CategoryForm = ({ show, onHide, selectedCategory }) => {
   const submitAddCategory = (e) => {
     e.preventDefault();
     dispatch(addCategory(categoryForm))
-      .then(() => onHide())
-      .catch(err => console.log(err));
+      .then(() => {
+        onHide();
+        successAlert('Category added');
+      })
+      .catch(error => failureAlert(error.message));
   }
 
   const submitEditCategory = (e) => {
     e.preventDefault();
     dispatch(updateCategory(categoryForm, selectedCategory.id))
-    .then(() => onHide())
-    .catch(err => console.log(err));
+    .then(() => {
+      onHide();
+      successAlert('Category updated')
+    })
+    .catch(error => failureAlert(error.message));
   }
 
   return (

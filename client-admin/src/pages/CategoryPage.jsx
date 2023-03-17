@@ -6,6 +6,7 @@ import { getDate } from '../helpers';
 import CategoryForm from '../components/CategoryForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteCategory, fetchCategories } from '../store/actions/actionCategory';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
 
 const CategoryPage = () => {
   const [categoryFormShow, setCategoryFormShow] = useState(false);
@@ -14,12 +15,14 @@ const CategoryPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategories());
+    dispatch(fetchCategories())
+      .catch(error => failureAlert(error.message));
   }, [])
   
   const deleteHandler = (categoryId) => {
     dispatch(deleteCategory(categoryId))
-      .catch(err => console.log(err));
+      .then(() => successAlert('Category removed'))
+      .catch(error => failureAlert(error.message));
   }
 
   const addCategoryHandler = () => {

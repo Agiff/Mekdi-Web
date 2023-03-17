@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch, useSelector } from 'react-redux';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
 import { fetchCategories } from '../store/actions/actionCategory';
 import { addItem, updateItem } from '../store/actions/actionItem';
 
@@ -54,15 +55,21 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
   const submitAddItem = (e) => {
     e.preventDefault();
     dispatch(addItem(itemForm))
-      .then(() => onHide())
-      .catch(err => console.log(err));
+      .then(() => {
+        onHide();
+        successAlert('Item added');
+      })
+      .catch(error => failureAlert(error.message));
   }
 
   const submitEditItem = (e) => {
     e.preventDefault();
     dispatch(updateItem(itemForm, selectedItem.id))
-    .then(() => onHide())
-    .catch(err => console.log(err));
+    .then(() => {
+      onHide();
+      successAlert('Item updated');
+    })
+    .catch(error => failureAlert(error.message));
   }
 
   const addIngredientField = () => {

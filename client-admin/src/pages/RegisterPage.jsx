@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -37,8 +38,9 @@ const RegisterPage = () => {
       });
       if (!response.ok) throw await response.json();
       navigate('/login');
+      successAlert('New admin account has been created');
     } catch (error) {
-      console.log(error.message);
+      failureAlert(error.message);
     }
   }
 
