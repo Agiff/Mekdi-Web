@@ -2,7 +2,8 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { successAlert } from '../helpers/sweetalert';
 
 const CustomNavbar = () => {
   const navigate = useNavigate();
@@ -10,20 +11,21 @@ const CustomNavbar = () => {
     e.preventDefault();
     localStorage.clear();
     navigate('/login');
+    successAlert('Logged out');
   }
 
   return (
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Pizza Donald</Navbar.Brand>
+          <NavLink className='navbar-brand' to='/'>Pizza Donald</NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/categories">Category</Nav.Link>
-              <Nav.Link href="/register">Register Admin</Nav.Link>
-              <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
+              <NavLink className='nav-link' to='/'>Home</NavLink>
+              <NavLink className='nav-link' to='/categories'>Category</NavLink>
+              <NavLink className='nav-link' to='/register'>Register Admin</NavLink>
+              <NavLink className='nav-link' onClick={logoutHandler}>Logout</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

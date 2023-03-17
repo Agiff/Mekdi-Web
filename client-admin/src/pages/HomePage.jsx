@@ -6,6 +6,7 @@ import { getPrice } from '../helpers';
 import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteItem, fetchItems } from '../store/actions/actionItem';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = useState(false);
@@ -14,12 +15,14 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchItems());
+    dispatch(fetchItems())
+      .catch(error => failureAlert(error.message))
   }, [])
 
   const deleteHandler = (itemId) => {
     dispatch(deleteItem(itemId))
-      .catch(err => console.log(err));
+      .then(() => successAlert('Item removed'))
+      .catch(error => failureAlert(error.message));
   }
 
   const addItemHandler = () => {

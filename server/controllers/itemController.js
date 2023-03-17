@@ -4,7 +4,7 @@ class itemController {
   static async showItems(req, res, next) {
     try {
       const items = await Item.findAll({
-        include: [Category, User]
+        include: [Category, User, Ingredient]
       });
       res.status(200).json(items);
     } catch (error) {
@@ -57,13 +57,14 @@ class itemController {
       const createdItem = await Item.create(
         { name, description, price, imgUrl, categoryId, authorId: id },
         { transaction: t });
-      for (const ingredient of ingredients) {
-        if (ingredient === '') continue;
-        await Ingredient.create({ itemId: createdItem.id, name: ingredient },
-          { transaction: t });
-      }
-      res.status(201).json({ message: 'Item created' });
+
+      const newIngredients = ingredients.filter(el => el !== '').map(el => {
+        return { name: el, itemId: createdItem.id }
+      })
+      await Ingredient.bulkCreate(newIngredients, { transaction: t });
+
       await t.commit();
+      res.status(201).json({ message: 'Item created' });
     } catch (error) {
       await t.rollback();
       next(error);

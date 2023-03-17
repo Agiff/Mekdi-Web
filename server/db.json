@@ -34,100 +34,124 @@
   ],
   "items": [
     {
-      "name": "Margherita Pizza",
-      "description": "A classic pizza with tomato sauce, mozzarella cheese, and basil",
-      "price": 120000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "name": "Paket Korean Soy Garlic Wings",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,",
+      "price": 31500,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/112093.png",
       "authorId": 2,
       "categoryId": 1
     },
     {
-      "name": "Pepperoni Pizza",
+      "name": "Bundling 4pcs Korean Soy Garlic Wings",
       "description": "A classic pizza with tomato sauce, mozzarella cheese, and pepperoni slices",
-      "price": 150000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 43500,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/112097.png",
       "authorId": 3,
       "categoryId": 1
     },
     {
-      "name": "Veggie Pizza",
+      "name": "Bundling 6pcs Korean Soy Garlic Wings",
       "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, and assorted vegetables",
-      "price": 130000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 65000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/112098.png",
       "authorId": 2,
       "categoryId": 1
     },
     {
-      "name": "Hawaiian Pizza",
+      "name": "Promo 2 Prosperity Burger",
       "description": "A pizza with tomato sauce, mozzarella cheese, ham, and pineapple",
-      "price": 140000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 69000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/100257.png",
       "authorId": 1,
       "categoryId": 1
     },
     {
-      "name": "Meat Lovers Pizza",
+      "name": "Bundling 2Prosperity Burger + 2 Ayam McD",
       "description": "A pizza with tomato sauce, mozzarella cheese, pepperoni, sausage, and bacon",
-      "price": 160000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 89000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/200105.png",
       "authorId": 3,
       "categoryId": 1
     },
     {
-      "name": "BBQ Chicken Pizza",
+      "name": "Bundling Beef Prosperity + Ayam McD",
       "description": "A pizza with BBQ sauce, mozzarella cheese, chicken, red onion, and cilantro",
-      "price": 170000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 89000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/200106.png",
       "authorId": 2,
       "categoryId": 1
     },
     {
-      "name": "Mushroom Pizza",
+      "name": "Bundling Fish Prosperity + Ayam McD",
       "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, and assorted mushrooms",
-      "price": 130000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 89000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/220010.png",
       "authorId": 2,
       "categoryId": 1
     },
     {
-      "name": "White Pizza",
+      "name": "5Style Cheese Steak Burger",
       "description": "A pizza with garlic-infused olive oil, mozzarella cheese, and assorted toppings",
-      "price": 150000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 53500,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/100304.png",
       "authorId": 1,
       "categoryId": 1
     },
     {
-      "name": "Veggie Supreme Pizza",
+      "name": "Bundling 2 Choco Marshmallow Pie",
       "description": "A vegetarian pizza with tomato sauce, mozzarella cheese, bell peppers, onions, mushrooms, and olives",
-      "price": 150000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 29500,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/283031.png",
+      "authorId": 3,
+      "categoryId": 3
+    },
+    {
+      "name": "Bundling 3 Choco Marshmallow Pie",
+      "description": "A classic soda made with Coca-Cola's secret recipe",
+      "price": 44000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/283032.png",
+      "authorId": 2,
+      "categoryId": 3
+    },
+    {
+      "name": "Fruit Punch Pinneaple Fizz",
+      "description": "A refreshing glass of orange juice made from fresh oranges",
+      "price": 17000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/184098.png",
+      "authorId": 2,
+      "categoryId": 2
+    },
+    {
+      "name": "Strawberry Latte Frappe",
+      "description": "A refreshing and sweetened iced tea made from tea leaves",
+      "price": 35000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/188136.png",
+      "authorId": 3,
+      "categoryId": 2
+    },
+    {
+      "name": "Iced Strawberry Tea",
+      "description": "A refreshing and sweetened iced tea made from tea leaves",
+      "price": 24000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/188138.png",
+      "authorId": 3,
+      "categoryId": 2
+    },
+    {
+      "name": "Share Box with Spicy BBQ Crunchy Stars & Mentai Sauce",
+      "description": "A refreshing and sweetened iced tea made from tea leaves",
+      "price": 45000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/112087.png",
       "authorId": 3,
       "categoryId": 1
     },
     {
-      "name": "Coca-Cola",
-      "description": "A classic soda made with Coca-Cola's secret recipe",
-      "price": 50000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
-      "authorId": 2,
-      "categoryId": 2
-    },
-    {
-      "name": "Orange Juice",
-      "description": "A refreshing glass of orange juice made from fresh oranges",
-      "price": 75000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
-      "authorId": 2,
-      "categoryId": 2
-    },
-    {
-      "name": "Iced Tea",
+      "name": "Paket Hantaran McD",
       "description": "A refreshing and sweetened iced tea made from tea leaves",
-      "price": 60000,
-      "imgUrl": "https://cdn.discordapp.com/attachments/1069920314357727233/1084784847123390485/pngwing.com_7.png",
+      "price": 129000,
+      "imgUrl": "https://www.mcdelivery.co.id/id/static/1679045254198/assets/62/products/211150.png",
       "authorId": 3,
-      "categoryId": 2
+      "categoryId": 1
     }
   ],
   "categories": [
