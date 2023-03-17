@@ -1,4 +1,4 @@
-const { Item, Ingredient, Category, User } = require('../models');
+const { Item, Ingredient, Category, User, sequelize } = require('../models');
 
 class itemController {
   static async showItems(req, res, next) {
@@ -50,14 +50,22 @@ class itemController {
   }
 
   static async createItem(req, res, next) {
+    const t = await sequelize.transaction();
     try {
       const { id } = req.user;
-      const { name, description, price, imgUrl, categoryId } = req.body;
-      console.log(req.body);
-      const createdItem = await Item.create({ name, description, price, imgUrl, categoryId, authorId: id });
-      res.status(201).json(createdItem);
-      //TODO ADD TRANSACTION
+      const { name, description, price, imgUrl, categoryId, ingredients } = req.body;
+      const createdItem = await Item.create(
+        { name, description, price, imgUrl, categoryId, authorId: id },
+        { transaction: t });
+      for (const ingredient of ingredients) {
+        if (ingredient === '') continue;
+        await Ingredient.create({ itemId: createdItem.id, name: ingredient },
+          { transaction: t });
+      }
+      res.status(201).json({ message: 'Item created' });
+      await t.commit();
     } catch (error) {
+      await t.rollback();
       next(error);
     }
   }
