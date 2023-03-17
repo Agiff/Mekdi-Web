@@ -7,9 +7,11 @@ import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteItem, fetchItems } from '../store/actions/actionItem';
 import { failureAlert, successAlert } from '../helpers/sweetalert';
+import IngredientModal from '../components/IngredientModal';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = useState(false);
+  const [ingredientShow, setIngredientShow] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const { items, loading } = useSelector((state) => state.items);
   const dispatch = useDispatch();
@@ -35,6 +37,11 @@ const HomePage = () => {
     setItemFormShow(true);
   }
 
+  const showIngredients = (item) => {
+    setSelectedItem(item);
+    setIngredientShow(true);
+  }
+
   return (
     <div className='container'>
       {
@@ -48,6 +55,11 @@ const HomePage = () => {
             onHide={() => setItemFormShow(false)}
             selectedItem={selectedItem}
           />
+          <IngredientModal
+            show={ingredientShow}
+            onHide={() => setIngredientShow(false)}
+            selectedItem={selectedItem}
+          />
           <Table bordered hover>
             <thead>
               <tr>
@@ -57,7 +69,7 @@ const HomePage = () => {
                 <th>PRICE</th>
                 <th>CREATED BY</th>
                 <th>IMAGE</th>
-                {/* <th>INGREDIENTS</th> */}
+                <th>INGREDIENTS</th>
                 <th>ACTIONS</th>
               </tr>
             </thead>
@@ -71,7 +83,7 @@ const HomePage = () => {
                     <td>{getPrice(item.price)}</td>
                     <td>{item.User?.username}</td>
                     <td><img src={item.imgUrl} alt={item.name} width="100" /></td>
-                    {/* <td><Button onClick={() => showIngredients(item)} variant="primary" className='btn btn-success me-3'>Show Ingredient</Button></td> */}
+                    <td><Button onClick={() => showIngredients(item)} variant="primary" className='btn btn-success'>Show Ingredient</Button></td>
                     <td>
                       <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary me-3'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
