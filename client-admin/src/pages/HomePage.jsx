@@ -62,15 +62,15 @@ const HomePage = () => {
             </thead>
             <tbody>
               {
-                items.map((item, index) => {
+                items?.map((item, index) => {
                   return <tr key={item.id}>
                     <td>{index+1}</td>
                     <td>{item.name}</td>
                     <td>{item.description}</td>
                     <td>{getPrice(item.price)}</td>
                     <td><img src={item.imgUrl} alt={item.name} width="100" /></td>
-                    <td>{item.User.username}</td>
-                    <td>{item.Category.name}</td>
+                    <td>{item.User?.username}</td>
+                    <td>{item.Category?.name}</td>
                     <td>
                       <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>

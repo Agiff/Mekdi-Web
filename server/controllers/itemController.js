@@ -53,6 +53,7 @@ class itemController {
     try {
       const { id } = req.user;
       const { name, description, price, imgUrl, categoryId } = req.body;
+      console.log(req.body);
       const createdItem = await Item.create({ name, description, price, imgUrl, categoryId, authorId: id });
       res.status(201).json(createdItem);
       //TODO ADD TRANSACTION
