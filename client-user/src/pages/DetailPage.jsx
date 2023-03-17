@@ -17,22 +17,21 @@ const DetailPage = () => {
   }, [])
 
   return (
-    <>
+    <div className='container py-5'>
       {
         loading ? <Loading /> :
         <div className='row'>
-          <h1>Detail Page {itemDetail.id}</h1>
           <div className='col-8'>
-            <img src={itemDetail.imgUrl} alt={itemDetail.name} className='w-100' />
+            <img src={itemDetail.imgUrl} alt={itemDetail.name} width={500} />
           </div>
           <div className='col-4' style={{textAlign: 'start'}}>
-            <h4>{itemDetail.name}</h4>
-            <div className='d-flex justify-content-between pe-4'>
+            <h2 className='mb-3'>{itemDetail.name}</h2>
+            <div className='d-flex justify-content-between pe-4 mb-3'>
               <h4>{getPrice(itemDetail.price)}</h4>
               <h4>{itemDetail.Category?.name}</h4>
             </div>
-            <p>{itemDetail.description}</p>
-            <h5>Ingredients: </h5>
+            <p className='mb-4 text-secondary'>{itemDetail.description}</p>
+            <h5 className='mb-3'>Ingredients: </h5>
             {
               itemDetail.Ingredients?.length <= 0 ? '-' :
               <>
@@ -48,7 +47,7 @@ const DetailPage = () => {
           </div>
         </div>
       }
-    </>
+    </div>
   )
 }
 

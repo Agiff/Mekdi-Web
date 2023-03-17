@@ -73,7 +73,8 @@ const Footer = () => {
       </div>
       <hr />
       <div className="legal-text pb-1">
-        <p>&copy; McDonald's Corporation 2023. All rights reserved.</p>
+        <p style={{ margin: '0' }}>SELURUH HAK CIPTA DILINDUNGI OLEH MCDONALD'S 2016</p>
+        <p>LOGO M DAN SLOGAN "I'M LOVIN' IT" ADALAH MILIK MCDONALD'S CORPORATION SECARA KESELURUHAN.</p>
       </div>
     </footer>
   );
