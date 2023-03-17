@@ -44,7 +44,11 @@ const LoginPage = () => {
   return (
     <div className='container vh-100 d-flex justify-content-center align-items-center'>
       <div className='card w-50 p-4'>
-        <h1 className='mb-5'>Login</h1>
+        <div className='d-flex justify-content-center'>
+          <img src="https://cdn.discordapp.com/attachments/1069920314357727233/1086404041594114108/pngwing.com_8.png" alt="Logo"
+          width={100}/>
+        </div>
+        <h3 className='mt-2 mb-4 fw-bold'>Sign in to your account</h3>
         <Form onSubmit={submitLogin} style={{textAlign: 'start'}}>
           <Form.Group className="mb-3" controlId="formLoginEmail">
             <Form.Label>Email address</Form.Label>
@@ -55,7 +59,7 @@ const LoginPage = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" name='password' onChange={changeLoginFormHandler}/>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="danger" type="submit" className='px-4 text-warning'>
             Sign In
           </Button>
         </Form>
