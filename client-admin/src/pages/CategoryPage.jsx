@@ -39,17 +39,16 @@ const CategoryPage = () => {
     <div className='container'>
       {
         loading ? <Loading /> : <>
-          <div className='d-flex justify-content-between'>
-            <h1>Category</h1>
+          <div className='d-flex justify-content-end mb-3'>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => addCategoryHandler()}>Add</Button>
+            onClick={() => addCategoryHandler()}>Create Category</Button>
           </div>
           <CategoryForm
             show={categoryFormShow}
             onHide={() => setCategoryFormShow(false)}
             selectedCategory={selectedCategory}
           />
-          <Table striped bordered hover>
+          <Table bordered hover>
             <thead>
               <tr>
                 <th>#</th>

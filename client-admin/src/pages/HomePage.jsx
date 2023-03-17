@@ -7,9 +7,11 @@ import ItemForm from '../components/ItemForm';
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteItem, fetchItems } from '../store/actions/actionItem';
 import { failureAlert, successAlert } from '../helpers/sweetalert';
+import IngredientModal from '../components/IngredientModal';
 
 const HomePage = () => {
   const [itemFormShow, setItemFormShow] = useState(false);
+  const [ingredientShow, setIngredientShow] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const { items, loading } = useSelector((state) => state.items);
   const dispatch = useDispatch();
@@ -35,32 +37,40 @@ const HomePage = () => {
     setItemFormShow(true);
   }
 
+  const showIngredients = (item) => {
+    setSelectedItem(item);
+    setIngredientShow(true);
+  }
+
   return (
     <div className='container'>
       {
         loading ? <Loading /> : <>
-          <div className='d-flex justify-content-between'>
-            <h1>Home</h1>
+          <div className='d-flex justify-content-end mb-3'>
             <Button variant="primary" className='btn btn-primary px-4'
-            onClick={() => addItemHandler()}>Add</Button>
+            onClick={() => addItemHandler()}>Create Item</Button>
           </div>
           <ItemForm
             show={itemFormShow}
             onHide={() => setItemFormShow(false)}
             selectedItem={selectedItem}
           />
-          <hr />
-          <Table striped bordered hover>
+          <IngredientModal
+            show={ingredientShow}
+            onHide={() => setIngredientShow(false)}
+            selectedItem={selectedItem}
+          />
+          <Table bordered hover>
             <thead>
               <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th width="250">Description</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Created By</th>
-                <th>Category</th>
-                <th>Actions</th>
+                <th>NO</th>
+                <th>NAME</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th>CREATED BY</th>
+                <th>IMAGE</th>
+                <th>INGREDIENTS</th>
+                <th>ACTIONS</th>
               </tr>
             </thead>
             <tbody>
@@ -68,14 +78,14 @@ const HomePage = () => {
                 items?.map((item, index) => {
                   return <tr key={item.id}>
                     <td>{index+1}</td>
-                    <td>{item.name}</td>
-                    <td>{item.description}</td>
-                    <td>{getPrice(item.price)}</td>
-                    <td><img src={item.imgUrl} alt={item.name} width="100" /></td>
-                    <td>{item.User?.username}</td>
+                    <td width={'200'}>{item.name}</td>
                     <td>{item.Category?.name}</td>
+                    <td>{getPrice(item.price)}</td>
+                    <td>{item.User?.username}</td>
+                    <td><img src={item.imgUrl} alt={item.name} width="100" /></td>
+                    <td><Button onClick={() => showIngredients(item)} variant="primary" className='btn btn-success'>Show Ingredient</Button></td>
                     <td>
-                      <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => editItemHandler(item)} variant="primary" className='btn btn-primary me-3'>Edit</Button>
                       <Button onClick={() => deleteHandler(item.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
