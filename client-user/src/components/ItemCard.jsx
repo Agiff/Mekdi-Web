@@ -13,7 +13,7 @@ function ItemCard({ item }) {
     <Card className='m-3' style={{ width: '18rem' }}>
       <Card.Img style={{cursor: 'pointer'}} variant="top" src={item.imgUrl} onClick={() => navigate(`/detail/${item.id}`)}/>
       <Card.Body>
-        <Card.Title>{item.name}</Card.Title>
+        <Card.Title className='text-truncate'>{item.name}</Card.Title>
         <div className='d-flex justify-content-evenly align-items-center'>
           <label>{getPrice(item.price)}</label>
           <Button variant="primary" className='btn btn-warning' onClick={pesanButton}>Pesan</Button>
