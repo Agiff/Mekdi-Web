@@ -22,13 +22,15 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
   useEffect(() => {
     dispatch(fetchCategories());
     if (selectedItem) {
+      const dataIngredients = selectedItem.Ingredients.map(el => el.name);
+      if (!dataIngredients.length) dataIngredients.push('');
       setItemForm({
         name: selectedItem.name,
         description: selectedItem.description,
         price: selectedItem.price,
         imgUrl: selectedItem.imgUrl,
         categoryId: selectedItem.categoryId,
-        ingredients: selectedItem.ingredients || ['']
+        ingredients: dataIngredients
       })
     } else {
       setItemForm({

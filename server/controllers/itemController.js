@@ -4,7 +4,7 @@ class itemController {
   static async showItems(req, res, next) {
     try {
       const items = await Item.findAll({
-        include: [Category, User]
+        include: [Category, User, Ingredient]
       });
       res.status(200).json(items);
     } catch (error) {
