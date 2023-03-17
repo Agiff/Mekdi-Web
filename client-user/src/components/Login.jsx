@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
+import { successAlert } from '../helpers/sweetalert';
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: ''
@@ -19,7 +23,8 @@ const Login = () => {
 
   const submitLogin = (e) => {
     e.preventDefault();
-    console.log(loginForm);
+    navigate('/menu');
+    successAlert('Logged in');
   }
 
   return (

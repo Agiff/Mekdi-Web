@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { getPrice } from '../helpers';
+import { failureAlert } from '../helpers/sweetalert';
 import { fetchItemDetail } from '../store/actions/actionItem';
 
 const DetailPage = () => {
@@ -11,7 +12,8 @@ const DetailPage = () => {
   const { itemDetail, loading } = useSelector(state => state.items);
 
   useEffect(() => {
-    dispatch(fetchItemDetail(itemId));
+    dispatch(fetchItemDetail(itemId))
+      .catch(error => failureAlert(error.message));
   }, [])
 
   return (
