@@ -36,7 +36,7 @@ const Login = () => {
           <Form.Control type="email" name='email' placeholder="Email aplikasi McDonald's" onChange={changeLoginFormHandler}/>
         </Form.Group>
 
-        <Form.Group className="mb-" controlId="formBasicPassword">
+        <Form.Group className="mb-1" controlId="formBasicPassword">
           <Form.Control type="password" name='password' placeholder="Password" onChange={changeLoginFormHandler}/>
         </Form.Group>
         <div className='d-flex justify-content-between'>

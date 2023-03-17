@@ -27,10 +27,10 @@ const HomePage = () => {
             </Carousel.Item>
           })
         }
-        <div className='card bg-light bg-opacity-75 text-center' style={{position: 'absolute', right: '2%', top: '5%', zIndex: '1', height: '90%'}}>
-          <Login/>
-        </div>
       </Carousel>
+      <div className='card bg-light bg-opacity-75 text-center' style={{position: 'absolute', right: '10%', top: '14%', zIndex: '1'}}>
+        <Login/>
+      </div>
       <div className='d-flex justify-content-between mt-3 mb-5'>
         <InfoCard imageUrl={'https://www.mcdelivery.co.id/id/static/1677662128341/assets/62/banners/home_promo_10623_Cashless_IN.jpg'}/>
         <InfoCard imageUrl={'https://www.mcdelivery.co.id/id/static/1677662128341/assets/62/banners/home_promo_6552_360x240PXL.jpg'}/>
