@@ -10,7 +10,7 @@ function ItemCard({ item }) {
   }
   
   return (
-    <Card className='m-3' style={{ width: '18rem' }}>
+    <Card className='m-3' style={{ width: '17rem' }}>
       <Card.Img style={{cursor: 'pointer'}} variant="top" src={item.imgUrl} onClick={() => navigate(`/detail/${item.id}`)}/>
       <Card.Body>
         <Card.Title className='text-truncate'>{item.name}</Card.Title>
