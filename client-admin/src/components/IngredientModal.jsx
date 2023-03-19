@@ -23,7 +23,8 @@ const IngredientModal = ({ show, onHide, selectedItem }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className='d-flex'>
+          <img src={selectedItem?.imgUrl} alt={selectedItem?.name} width="100%" />
+          <div className='d-flex mt-3'>
             <h5 className='me-3'>Ingredients: </h5>
             <div className='d-flex flex-column mt-1'>
               {

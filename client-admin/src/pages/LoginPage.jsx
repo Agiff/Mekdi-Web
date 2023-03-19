@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import { failureAlert, successAlert } from '../helpers/sweetalert';
+import { baseUrl } from '../config';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -23,7 +24,6 @@ const LoginPage = () => {
   const submitLogin = async (e) => {
     e.preventDefault();
     try {
-      const baseUrl = 'http://localhost:3000/'
       const response = await fetch(baseUrl + 'users/login', {
         method: 'POST',
         headers: {

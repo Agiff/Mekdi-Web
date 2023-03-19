@@ -1,5 +1,5 @@
-import { ITEMS_CHANGE_LOADING, ITEMS_FETCH_SUCCESS } from "./actionType"
-const baseUrl = 'http://localhost:3000/';
+import { ITEMS_CHANGE_LOADING, ITEMS_FETCH_SUCCESS } from "./actionType";
+import { baseUrl } from "../../config";
 
 export const fetchItemsSuccess = (payload) => {
   return {

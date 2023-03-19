@@ -67,7 +67,7 @@ const CategoryPage = () => {
                     <td>{getDate(category.createdAt)}</td>
                     <td>{getDate(category.updatedAt)}</td>
                     <td>
-                      <Button onClick={() => editCategoryHandler(category)} variant="primary" className='btn btn-primary'>Edit</Button>
+                      <Button onClick={() => editCategoryHandler(category)} variant="primary" className='btn btn-primary me-3'>Edit</Button>
                       <Button onClick={() => deleteHandler(category.id)} variant="primary" className='btn btn-danger'>Delete</Button>
                     </td>
                   </tr>
