@@ -30,7 +30,7 @@ export const fetchCategories = () => {
       dispatch(loadingCategories(false));
       return categories;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   }
 }
