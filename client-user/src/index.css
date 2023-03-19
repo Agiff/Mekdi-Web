@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-shadow {
+  box-shadow: 2px 2px 2px gray;
+}
+
+@font-face {
+  font-family: 'Flama Condensed';
+  src: local('Flama Condensed Medium'), local('Flama-Condensed-Medium'),
+      url('../public/fonts/FlamaCondensed-Medium.woff2') format('woff2'),
+      url('../public/fonts/FlamaCondensed-Medium.woff') format('woff'),
+      url('../public/fonts/FlamaCondensed-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Flama Condensed', sans-serif;
+  background-color: #EEEEEE;
+}

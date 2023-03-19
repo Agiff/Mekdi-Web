@@ -3,7 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, fetchCategories, updateItem } from '../store/actions/actionCreator';
+import { failureAlert, successAlert } from '../helpers/sweetalert';
+import { fetchCategories } from '../store/actions/actionCategory';
+import { addItem, updateItem } from '../store/actions/actionItem';
 
 const ItemForm = ({ show, onHide, selectedItem }) => {
   const dispatch = useDispatch();
@@ -13,20 +15,22 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
     description: '',
     price: 0,
     imgUrl: '',
-    authorId: 1,
-    categoryId: 0
+    categoryId: 1,
+    ingredients: ['']
   });
 
   useEffect(() => {
     dispatch(fetchCategories());
     if (selectedItem) {
+      const dataIngredients = selectedItem.Ingredients.map(el => el.name);
+      if (!dataIngredients.length) dataIngredients.push('');
       setItemForm({
         name: selectedItem.name,
         description: selectedItem.description,
         price: selectedItem.price,
         imgUrl: selectedItem.imgUrl,
-        authorId: selectedItem.authorId,
-        categoryId: selectedItem.categoryId
+        categoryId: selectedItem.categoryId,
+        ingredients: dataIngredients
       })
     } else {
       setItemForm({
@@ -34,11 +38,12 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
         description: '',
         price: 0,
         imgUrl: '',
-        authorId: 1,
-        categoryId: 0
+        categoryId: 1,
+        ingredients: ['']
       })
     }
   }, [selectedItem])
+  
 
   const changeItemFormHandler = (e) => {
     const { value, name } = e.target;
@@ -52,22 +57,56 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
   const submitAddItem = (e) => {
     e.preventDefault();
     dispatch(addItem(itemForm))
-      .then(() => onHide())
-      .catch(err => console.log(err));
+      .then(() => {
+        onHide();
+        successAlert('Item added');
+      })
+      .catch(error => failureAlert(error.message));
   }
 
   const submitEditItem = (e) => {
     e.preventDefault();
     dispatch(updateItem(itemForm, selectedItem.id))
-    .then(() => onHide())
-    .catch(err => console.log(err));
+    .then(() => {
+      onHide();
+      successAlert('Item updated');
+    })
+    .catch(error => failureAlert(error.message));
   }
+
+  const addIngredientField = () => {
+    const newItemForm = {
+      ...itemForm,
+      ingredients: [...itemForm.ingredients, ''],
+    };
+    setItemForm(newItemForm);
+  };
+
+  const changeIngredientField = (e, index) => {
+    const newIngredients = [...itemForm.ingredients];
+    newIngredients[index] = e.target.value;
+    const newItemForm = {
+      ...itemForm,
+      ingredients: newIngredients,
+    };
+    setItemForm(newItemForm);
+  };
 
   return (
     <div className='container'>
       <Modal
         show={show}
-        onHide={onHide}
+        onHide={() => {
+          onHide();
+          setItemForm({
+            name: '',
+            description: '',
+            price: 0,
+            imgUrl: '',
+            categoryId: 1,
+            ingredients: ['']
+          });
+        }}
         size="md"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -107,10 +146,24 @@ const ItemForm = ({ show, onHide, selectedItem }) => {
                 }
               </Form.Select>
             </Form.Group>
-            
-            <Button variant="primary" type="submit" className='px-4'>
-              { selectedItem ? 'Edit' : 'Add' }
-            </Button>
+
+            <Form.Label>Ingredients</Form.Label>
+            {itemForm.ingredients.map((ingredient, index) => (
+              <Form.Group className="mb-3" controlId={`formIngredient${index}`} key={index}>
+                <Form.Control type="text" name={`ingredient${index + 1}`} value={ingredient} onChange={(e) => changeIngredientField(e, index)} />
+              </Form.Group>
+            ))}
+
+            <div className='d-flex justify-content-between'>
+              <Button variant="warning" type="button" className='px-4' onClick={addIngredientField}>
+                Add Ingredient
+              </Button>
+
+              <Button variant="primary" type="submit" className='px-4'>
+                { selectedItem ? 'Edit' : 'Add' }
+              </Button>
+            </div>
+
           </Form>
         </Modal.Body>
       </Modal>
