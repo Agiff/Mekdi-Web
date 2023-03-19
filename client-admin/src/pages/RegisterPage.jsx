@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import { failureAlert, successAlert } from '../helpers/sweetalert';
+import { baseUrl } from '../config';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,6 @@ const RegisterPage = () => {
   const submitRegister = async (e) => {
     e.preventDefault();
     try {
-      const baseUrl = 'http://localhost:3000/'
       const response = await fetch(baseUrl + 'users/register', {
         method: 'POST',
         headers: {
