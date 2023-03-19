@@ -29,7 +29,7 @@ export const fetchItems = () => {
       dispatch(loadingItems(false));
       return items;
     } catch (error) {
-      throw error.message;
+      throw error;
     }
   }
 }
@@ -50,7 +50,7 @@ export const addItem = (payload) => {
       dispatch(fetchItems());
       return createdItem;
     } catch (error) {
-      throw error.message;
+      throw error;
     }
   }
 }
@@ -69,7 +69,7 @@ export const deleteItem = (itemId) => {
       dispatch(fetchItems());
       return deletedItem;
     } catch (error) {
-      throw error.message;
+      throw error;
     }
   }
 }
@@ -90,7 +90,7 @@ export const updateItem = (payload, itemId) => {
       dispatch(fetchItems());
       return updatedItem;
     } catch (error) {
-      throw error.message;
+      throw error;
     }
   }
 }

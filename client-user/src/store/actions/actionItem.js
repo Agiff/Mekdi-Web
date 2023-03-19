@@ -32,7 +32,7 @@ export const fetchItems = () => {
       dispatch(fetchItemsSuccess(response));
       dispatch(loadingItems(false));
     } catch (error) {
-      throw error.message;
+      throw error;
     }
   }
 }
@@ -47,7 +47,7 @@ export const fetchItemDetail = (itemId) => {
       dispatch(fetchItemDetailSuccess(response));
       dispatch(loadingItems(false));
     } catch (error) {
-      throw error.message;
+      throw error;
     }
   }
 }
